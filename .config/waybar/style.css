@@ -25,7 +25,8 @@ tooltip {
 #memory,
 #battery,
 #network,
-#pulseaudio {
+#pulseaudio,
+#language {
     margin: 6px 6px 6px 0px;
     padding: 2px 8px;
 	border-radius: 4px;
@@ -65,19 +66,27 @@ tooltip {
     color: #1f1c27;
 }
 
-#tray {
-    background-color: #353146;
-    border: 2px solid #b6a0ff;
-}
-
 #cpu,
 #memory,
 #network,
 #pulseaudio,
-#battery {
+#battery,
+#tray,
+#language {
     background-color: #353146;
     border: 2px solid #b6a0ff;
     color: #b6a0ff;
+}
+
+#network {
+	min-width: 100px;
+}
+
+#cpu,
+#memory,
+#battery,
+#pulseaudio {
+	min-width: 60px;
 }
 
 #cpu.critical,
@@ -100,4 +109,8 @@ tooltip {
 	border-radius: 10px;
 	transition: none;
     color: #b6a0ff;
+}
+
+#language {
+	min-width: 20px;
 }
