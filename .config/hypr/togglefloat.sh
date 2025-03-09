@@ -1,0 +1,1 @@
+hyprctl dispatch workspaceopt allfloat

@@ -26,7 +26,6 @@
         "battery",
         "network",
         "pulseaudio",
-		"custom/cava"
     ],
 
     "custom/launcher":{
@@ -94,7 +93,7 @@
         "format": "vol {volume}%",
         "format-bluetooth": "vol {volume}%",
         "nospacing": 1,
-        "on-click": "pavucontrol",
+        "on-click": "pwvucontrol",
         "tooltip": false
     },
 
