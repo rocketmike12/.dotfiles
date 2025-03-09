@@ -186,9 +186,9 @@
   </dock>
   <keyboard>
     <!-- Keybindings for window tiling -->
-	<keybind key="C-S-m">
-		<action name="iconify"/>
-	</keybind>
+    <keybind key="C-S-m">
+      <action name="iconify"/>
+    </keybind>
     <keybind key="C-S-Up">        # FullScreen
         <action name="Maximize"/>
     </keybind>
@@ -808,19 +808,17 @@
     <application class="*">
       <focus>yes</focus>
     </application>
-
-	<application class="UXTerm">
-		<desktop>all</desktop>
-    	<sticky>yes</sticky>
-    	<focus>no</focus>
-    	<skip_pager>yes</skip_pager>
-    	<skip_taskbar>yes</skip_taskbar>
-    	<decor>no</decor>
-    	<movable>no</movable>
-    	<resize>no</resize>
-    	<fullscreen>no</fullscreen>
-    	<layer>below</layer>
-	</application>
-
+    <application class="UXTerm">
+      <desktop>all</desktop>
+      <sticky>yes</sticky>
+      <focus>no</focus>
+      <skip_pager>yes</skip_pager>
+      <skip_taskbar>yes</skip_taskbar>
+      <decor>no</decor>
+      <movable>no</movable>
+      <resize>no</resize>
+      <fullscreen>no</fullscreen>
+      <layer>below</layer>
+    </application>
   </applications>
 </openbox_config>
