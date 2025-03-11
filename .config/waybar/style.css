@@ -106,7 +106,14 @@ tooltip {
 	font-size: 20px;
 	padding-left: 10px;
 	padding-right: 5px;
-	border-radius: 10px;
+	transition: none;
+    color: #b6a0ff;
+}
+
+#custom-control {
+	font-size: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
 	transition: none;
     color: #b6a0ff;
 }
