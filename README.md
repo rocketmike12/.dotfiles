@@ -1,6 +1,6 @@
 # .dotfiles
 My dotfiles repo. Contains files for my Hyprland setup and my LXQt setup.
-## Hyprland
+# Hyprland
 ![screenshot](.dotfiles/resources/2025-03-07-132136_hyprshot.png)
 ![screenshot](.dotfiles/resources/2025-03-06-165130_hyprshot.png)
 ![screenshot](.dotfiles/resources/2025-03-07-132112_hyprshot.png)
