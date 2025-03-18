@@ -1,0 +1,71 @@
+configuration {
+	display-drun: "Applications:\n";
+	display-window: "Windows:\n";
+	display-run: "run:\n";
+	drun-display-format: "{icon} {name}";
+	font: "JetBrainsMono Nerd Font Medium 16";
+	modi: "window,run,drun";
+	show-icons: true;
+	icon-theme: "ePapirus-Dark";
+	steal-focus: true;
+}
+
+// @theme "/usr/share/rofi/themes/DarkBlue.rasi"
+@theme "/dev/null"
+
+* {
+	bg: #070d0c;
+	bg-alt: #1b2221;
+	
+	fg: #0da51f;
+	fg-alt: #7667e4;
+
+	background-color: @bg;
+
+	border: 0;
+	margin: 0;
+	padding: 0;
+	spacing: 0;
+}
+
+window {
+	width: 45%;
+	padding: 20px;
+	border: 4px;
+	border-color: @fg;
+	children: [mainbox];
+}
+
+mainbox {
+	children: [inputbar, listview];
+}
+
+element {
+	padding: 12;
+	text-color: @fg;
+}
+
+element selected {
+	text-color: @fg-alt;
+	border: 1px;
+	border-color: @fg-alt;
+	border-radius: 4px;
+}
+
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+	vertical-align: 0.5;
+}
+
+inputbar {
+	children: [prompt, entry];
+}
+
+prompt {
+	text-color: @fg;
+}
+
+entry {
+	text-color: @fg;
+}

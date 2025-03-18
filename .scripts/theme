@@ -1,0 +1,12 @@
+#!/bin/bash
+
+selected=$(echo "Machine
+Matrix" | rofi -dmenu -p "Theme:")
+
+if [[ $selected == "Machine" ]] then
+	bash ~/.config/hypr/machine.sh
+else
+	if [[ $selected = "Matrix" ]] then
+		bash ~/.config/hypr/matrix.sh
+	fi
+fi
