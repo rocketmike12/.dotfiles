@@ -1,5 +1,5 @@
 # .dotfiles
-My dotfiles repo. Contains files for my Hyprland setup and my LXQt setup.
+My dotfiles repo. Contains files for my Hyprland setup and my LXQt setup, as well as some applications
 # Hyprland
 
 ## Machine
