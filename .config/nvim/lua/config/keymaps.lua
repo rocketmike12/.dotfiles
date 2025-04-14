@@ -18,5 +18,8 @@ vim.g.clipboard = {
 
 vim.keymap.set({'n', 'c'}, '<C-B>', ':NvimTreeToggle<CR>')
 vim.keymap.set({'n'}, '<C-D>', 'yyp')
-vim.keymap.set({'n', 'i', 'v', 'c'}, '<C-T>', ':tabnew<CR>')
-vim.keymap.set({'n', 'i', 'v', 'c'}, '<C-Tab>', ':tabnext<CR>')
+
+-- vim.keymap.set({'n', 'i', 'v', 'c'}, '<C-T>', ':tabnew<CR>')
+-- vim.keymap.set({'n', 'i', 'v', 'c'}, '<C-Tab>', ':tabnext<CR>')
+
+vim.keymap.set({'n'}, '<C-_>', 'gcc')

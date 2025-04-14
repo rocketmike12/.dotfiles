@@ -24,25 +24,27 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
 	-- Plugins
 	
-	require('config.mason'),
-	require('config.lspconfig'),
+	-- require('config.mason'),
+	-- require('config.lspconfig'),
 	require('config.cmp'),
-
+	
 	-- Treesitter
 	{
-    	"nvim-treesitter/nvim-treesitter",
-    	build = ":TSUpdate",
-    	config = function () 
-      		local configs = require("nvim-treesitter.configs")
+	   	"nvim-treesitter/nvim-treesitter",
+	   	build = ":TSUpdate",
+		priority = 1,
+		lazy = false,
+	   	config = function () 
+	     		local configs = require("nvim-treesitter.configs")
 
-      		configs.setup({
-          		ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
-          		sync_install = false,
-          		highlight = { enable = true },
+	     		configs.setup({
+	         		ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
+	         		sync_install = false,
+	         		highlight = { enable = true },
 				indent = { enable = true },
 				additional_vim_regex_highlighting = false,
-        	})
-    	end
+	       	})
+	   	end
 	},
 
 	-- Dracula theme
@@ -64,7 +66,9 @@ require("lazy").setup({
     		vim.keymap.set({'n', 'i'}, '<C-E>', require('nvim-emmet').wrap_with_abbreviation)
   		end,
 	},
+
 	{ 'wilmanbarrios/palenight.nvim' },
+	
 	{
     	"goolord/alpha-nvim",
     	-- dependencies = { 'echasnovski/mini.icons' },
@@ -79,5 +83,25 @@ require("lazy").setup({
       		)
     	end,
   	},
-	{ 'tmsvg/pear-tree', config = function() end }
+
+	{ 'tmsvg/pear-tree', config = function() end },
+
+	{ "rebelot/kanagawa.nvim", opts = {} },
+	
+	{ 'maxmx03/fluoromachine.nvim', opts = {}},
+	
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
+	{ 'nyoom-engineering/oxocarbon.nvim', config = function () end },
+
+  	{
+    	"baliestri/aura-theme",
+    	lazy = false,
+    	priority = 1000,
+    	config = function(plugin)
+      		vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+    	end
+  	},
+
+	{ "rose-pine/neovim", name = "rose-pine" },
 })
