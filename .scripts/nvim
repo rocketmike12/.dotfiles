@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ $(basename "/"$(ps -o cmd -f -p $(cat /proc/$(echo $$)/stat | cut -d \  -f 4) | tail -1 | sed 's/ .*$//')) == "kitty" ]; then
+	kitty @ set-spacing padding=0;
+	/usr/bin/nvim $@;
+	kitty @ set-spacing padding=5;
+else
+	/usr/bin/nvim $@;
+fi	

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [[ "$XDG_CURRENT_DESKTOP" == "LXQt" ]]; then
+	echo "Set kitty color theme to Moon"
+	rm /home/mike/.config/kitty/theme.conf && ln -s /home/mike/.config/kitty/themes/moon-colors-kitty.conf /home/mike/.config/kitty/theme.conf
+fi

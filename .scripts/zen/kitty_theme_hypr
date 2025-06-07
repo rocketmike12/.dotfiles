@@ -1,0 +1,2 @@
+#!/bin/bash
+rm /home/mike/.config/kitty/theme.conf && ln -s /home/mike/.config/kitty/themes/Zen.conf /home/mike/.config/kitty/theme.conf
