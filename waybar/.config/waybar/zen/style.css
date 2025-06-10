@@ -5,6 +5,7 @@
     font-weight: 500;
     font-size: 14px;
     padding: 0;
+	border-radius: 0;
 }
 
 window#waybar {

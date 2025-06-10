@@ -92,7 +92,7 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -laF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -123,15 +123,15 @@ export matrix01="The Matrix has you..."
 export matrix02="Follow the white rabbit."
 export matrix03="Knock, knock, Neo."
 
-alias dotfiles='/usr/bin/git' --git-dir=/home/mike/.dotfiles/ --work-tree=/home/mike
+# alias dotfiles='/usr/bin/git' --git-dir=/home/mike/.dotfiles/ --work-tree=/home/mike
 
 NPM_PACKAGES="${HOME}/.npm-packages"
-PATH="$NPM_PACKAGES/bin:$PATH:~/.local/bin"
+PATH="$NPM_PACKAGES/bin:$PATH:~/.local/bin:~/.cargo/bin/"
 
 SCRIPTS="${HOME}/.scripts"
 PATH="$PATH:$SCRIPTS"
 
-# alias nvim="~/.scripts/nvim"
+alias nvim="~/.scripts/nvim"
 alias vi="nvim"
 
 

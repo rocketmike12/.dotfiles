@@ -150,7 +150,7 @@ require("lazy").setup({
 				base =  "#0a000c"
 			}
 		},
-		transparent_background = true
+		-- transparent_background = true
 	} },
 
 	{ 'nyoom-engineering/oxocarbon.nvim', config = function () end },
