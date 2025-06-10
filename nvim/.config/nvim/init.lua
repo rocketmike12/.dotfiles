@@ -1,3 +1,5 @@
+vim.opt.termguicolors = true
+
 function leave_snippet()
     if
         ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')

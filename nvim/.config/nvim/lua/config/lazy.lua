@@ -181,6 +181,8 @@ require("lazy").setup({
 
 	{ "ellisonleao/gruvbox.nvim", opts = {} },
 
+	{ 'norcalli/nvim-colorizer.lua', opts = {} },
+
 	-- Lualine
 	{
     	'nvim-lualine/lualine.nvim',

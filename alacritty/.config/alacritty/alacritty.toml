@@ -1,0 +1,9 @@
+[font]
+normal = { family = "Hack", style = "Bold" }
+size = 12
+
+[colors]
+cursor = { text = "#000000", cursor = "#ffffff" }
+
+[colors.primary]
+background = "#000000"
