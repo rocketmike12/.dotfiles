@@ -10,7 +10,7 @@ TMEcolor.ansi[1] = '#120d16'
 TMEcolor.brights[1] = '#1f1626'
 
 config.color_schemes = {
-  ['TME'] = TMEcolor,
+	['TME'] = TMEcolor,
 }
 config.color_scheme = 'TME';
 

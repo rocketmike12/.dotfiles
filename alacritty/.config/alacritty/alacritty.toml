@@ -1,9 +1,13 @@
+[general]
+import = ["~/.config/alacritty/theme.toml"]
+
+[window]
+padding = { x = 8, y = 8 }
+
 [font]
-normal = { family = "Hack", style = "Bold" }
+normal = { family = "Hack Nerd Font Mono", style = "Regular" }
 size = 12
 
-[colors]
-cursor = { text = "#000000", cursor = "#ffffff" }
+[cursor]
+style = { shape = "Beam" }
 
-[colors.primary]
-background = "#000000"

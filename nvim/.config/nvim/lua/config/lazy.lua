@@ -28,6 +28,7 @@ require("lazy").setup({
 	-- require('config.lspconfig'),
 	-- require('config.cmp'),
 
+	-- nvim-cmp
   	{
     	'hrsh7th/nvim-cmp',
     	dependencies = {
@@ -45,6 +46,7 @@ require("lazy").setup({
     	end
   	},
 
+	-- lsp stuff
   	{
 		'neovim/nvim-lspconfig',
     	config = function()
@@ -79,6 +81,8 @@ require("lazy").setup({
 	{ 'neovim/nvim-lspconfig' },
 	-- { 'jose-elias-alvarez/null-ls.nvim' },
 	{ 'nvimtools/none-ls.nvim' },
+
+	-- Prettier
 	{ 'MunifTanjim/prettier.nvim' },
 
 	-- Treesitter
@@ -100,18 +104,29 @@ require("lazy").setup({
 	   	end
 	},
 
+	-- Telescope
 	{
     	'nvim-telescope/telescope.nvim', tag = '0.1.8',
     	dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
-	-- Dracula theme
-	{ 'Mofiqul/dracula.nvim' },
+	{ 'tmsvg/pear-tree', config = function() end },
+
+	-- live-server
+	{
+        'barrett-ruth/live-server.nvim',
+        build = 'pnpm add -g live-server',
+        cmd = { 'LiveServerStart', 'LiveServerStop' },
+        config = true
+    },
+
+
 
 	-- nvim-tree
 	{ 'nvim-tree/nvim-web-devicons', opts = {} },
 	{ 'nvim-tree/nvim-tree.lua', opts = {} },
 
+	-- Emmet
 	{
 		'olrtg/nvim-emmet',
 		config = function()
@@ -119,8 +134,7 @@ require("lazy").setup({
   		end,
 	},
 
-	{ 'wilmanbarrios/palenight.nvim' },
-
+	-- Alpha dashboard
 	{
     	"goolord/alpha-nvim",
     	-- dependencies = { 'echasnovski/mini.icons' },
@@ -136,7 +150,22 @@ require("lazy").setup({
     	end,
   	},
 
-	{ 'tmsvg/pear-tree', config = function() end },
+	-- Lualine
+	{
+    	'nvim-lualine/lualine.nvim',
+    	dependencies = { 'nvim-tree/nvim-web-devicons' },
+	},
+
+	-- yuck language support
+	{ 'elkowar/yuck.vim' },
+
+	-- nvim-colorizer
+	{ 'norcalli/nvim-colorizer.lua', opts = {} },
+
+	-- THEMES
+	{ 'Mofiqul/dracula.nvim', opts = {} },
+
+	{ 'wilmanbarrios/palenight.nvim' },
 
 	{ "rebelot/kanagawa.nvim", opts = {} },
 
@@ -164,28 +193,10 @@ require("lazy").setup({
     	end
   	},
 
-	{ "rose-pine/neovim", name = "rose-pine" },
+	{ "rose-pine/neovim", name = "rose-pine", opts = {} },
 
-	{
-        'barrett-ruth/live-server.nvim',
-        build = 'pnpm add -g live-server',
-        cmd = { 'LiveServerStart', 'LiveServerStop' },
-        config = true
-    },
-
-	{
-		'elkowar/yuck.vim'
-	},
-
-	{ 'loctvl842/monokai-pro.nvim' },
+	{ 'loctvl842/monokai-pro.nvim', opts = {} },
 
 	{ "ellisonleao/gruvbox.nvim", opts = {} },
 
-	{ 'norcalli/nvim-colorizer.lua', opts = {} },
-
-	-- Lualine
-	{
-    	'nvim-lualine/lualine.nvim',
-    	dependencies = { 'nvim-tree/nvim-web-devicons' },
-	},
 })
