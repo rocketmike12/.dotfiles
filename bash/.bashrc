@@ -120,7 +120,7 @@ if ! shopt -oq posix; then
 fi
 
 # some folder shortcuts
-source .bash_folders
+source ~/.bash_folders
 
 export matrix00="Wake up, Neo..."
 export matrix01="The Matrix has you..."

@@ -162,6 +162,9 @@ require("lazy").setup({
 	-- nvim-colorizer
 	{ 'norcalli/nvim-colorizer.lua', opts = {} },
 
+	-- neocord
+	{ 'IogaMaster/neocord', event = "VeryLazy", opts = {} },
+
 	-- THEMES
 	{ 'Mofiqul/dracula.nvim', opts = {} },
 
