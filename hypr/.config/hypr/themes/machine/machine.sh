@@ -3,9 +3,9 @@ rm ~/.config/hypr/look_and_feel.conf
 rm ~/.config/hypr/hyprpaper.conf
 rm ~/.config/hypr/plugins.conf
 
-ln -s ~/.config/hypr/machine/look_and_feel.conf ~/.config/hypr/look_and_feel.conf
-ln -s ~/.config/hypr/machine/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
-ln -s ~/.config/hypr/machine/plugins.conf ~/.config/hypr/plugins.conf
+ln -s ~/.config/hypr/themes/machine/look_and_feel.conf ~/.config/hypr/look_and_feel.conf
+ln -s ~/.config/hypr/themes/machine/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
+ln -s ~/.config/hypr/themes/machine/plugins.conf ~/.config/hypr/plugins.conf
 
 # Set waybar config
 rm ~/.config/waybar/style.css

@@ -3,9 +3,9 @@ rm ~/.config/hypr/look_and_feel.conf
 rm ~/.config/hypr/hyprpaper.conf
 rm ~/.config/hypr/plugins.conf
 
-ln -s ~/.config/hypr/zen/look_and_feel.conf ~/.config/hypr/look_and_feel.conf
-ln -s ~/.config/hypr/zen/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
-ln -s ~/.config/hypr/zen/plugins.conf ~/.config/hypr/plugins.conf
+ln -s ~/.config/hypr/themes/zen/look_and_feel.conf ~/.config/hypr/look_and_feel.conf
+ln -s ~/.config/hypr/themes/zen/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
+ln -s ~/.config/hypr/themes/zen/plugins.conf ~/.config/hypr/plugins.conf
 
 # Set waybar config
 rm ~/.config/waybar/style.css
