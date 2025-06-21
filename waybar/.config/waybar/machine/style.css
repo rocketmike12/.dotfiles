@@ -10,7 +10,7 @@
 window#waybar {
     background: #1f1c27;
     border: 2px solid #b6a0ff;
-    border-radius: 4px;
+    border-radius: 15px;
 }
 
 tooltip {
