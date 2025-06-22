@@ -1,3 +1,4 @@
 #!/bin/bash
+echo matrix
 rm ~/.config/kitty/theme.conf
-ln -s ~/.config/kitty/themes/Base4Tone_Classic_L_Custom.conf ~/.config/kitty/theme.conf
+ln -s ~/.config/kitty/themes/matrix/theme.conf ~/.config/kitty/theme.conf

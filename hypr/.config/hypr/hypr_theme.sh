@@ -1,7 +1,6 @@
 #!/bin/bash
 
 if test -d "$HOME/.config/hypr/themes/$1/"; then
-	echo "running"
 	# Set Hyprland config
 	rm ~/.config/hypr/look_and_feel.conf
 	rm ~/.config/hypr/hyprpaper.conf
@@ -22,15 +21,20 @@ if test -d "$HOME/.config/hypr/themes/$1/"; then
 	rm ~/.config/kitty/theme.conf
 	rm ~/.scripts/kitty_theme_hypr
 
-	ln -s ~/.config/kitty/themes/Zen.conf ~/.config/kitty/theme.conf
+	ln -s ~/.config/kitty/themes/$1/theme.conf ~/.config/kitty/theme.conf
 	ln -s ~/.scripts/$1/kitty_theme_hypr ~/.scripts/kitty_theme_hypr
+
+	# Set alacritty theme
+	rm ~/.config/alacritty/theme.toml
+
+	ln -s ~/.config/alacritty/themes/$1/theme.toml ~/.config/alacritty/theme.toml
 
 	# Set rofi theme
 	rm ~/.config/rofi/config.rasi
 
 	ln -s ~/.config/rofi/$1/config.rasi ~/.config/rofi/config.rasi
 
-	# Reload everything
+	## Reload everything
 
 	# Reload Hyprland
 	hyprctl reload > /dev/null
@@ -45,4 +49,7 @@ if test -d "$HOME/.config/hypr/themes/$1/"; then
 
 	# Send SIGUSR1 signal to all instances of kitty to reload config
 	killall -SIGUSR1 kitty
+
+	# Reload alacritty config
+	touch ~/.config/alacritty/alacritty.toml
 fi
