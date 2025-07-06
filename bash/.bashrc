@@ -74,6 +74,8 @@ unset color_prompt force_color_prompt
 	#     ;;
 	# esac
 
+source ~/.scripts/tty_colors.sh
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -138,3 +140,4 @@ PATH="$PATH:$SCRIPTS"
 alias nvim="~/.scripts/nvim"
 alias vi="nvim"
 
+alias ff="fastfetch"

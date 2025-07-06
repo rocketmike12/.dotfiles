@@ -7,6 +7,7 @@
 -- vim.cmd.colorscheme 'fluoromachine'
 
 vim.cmd.colorscheme "catppuccin"
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#cba6f7", bg = "NONE" })
 
 -- vim.opt.background = "dark" 
 -- vim.cmd.colorscheme "oxocarbon"
@@ -18,3 +19,5 @@ vim.cmd.colorscheme "catppuccin"
 -- vim.cmd([[colorscheme monokai-pro]])
 
 -- vim.cmd([[colorscheme gruvbox]])
+
+-- vim.cmd.colorscheme("evangelion")

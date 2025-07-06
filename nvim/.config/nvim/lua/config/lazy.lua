@@ -42,7 +42,7 @@ require("lazy").setup({
     	},
 
     	config = function()
-      		require('config.cmp')
+			require('config.cmp')
     	end
   	},
 
@@ -78,7 +78,6 @@ require("lazy").setup({
   		end
 	},
 
-	{ 'neovim/nvim-lspconfig' },
 	-- { 'jose-elias-alvarez/null-ls.nvim' },
 	{ 'nvimtools/none-ls.nvim' },
 
@@ -119,8 +118,6 @@ require("lazy").setup({
         cmd = { 'LiveServerStart', 'LiveServerStop' },
         config = true
     },
-
-
 
 	-- nvim-tree
 	{ 'nvim-tree/nvim-web-devicons', opts = {} },
@@ -174,16 +171,26 @@ require("lazy").setup({
 
 	{ 'maxmx03/fluoromachine.nvim', opts = {}},
 
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1, opts = {
-		color_overrides = {
-			all = {
-				crust = "#0a000c",
-				mantle = "#0a000c",
-				base =  "#0a000c"
-			}
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1,
+
+		integrations = {
+			cmp = true,
 		},
-		-- transparent_background = true
-	} },
+
+		opts = {
+			color_overrides = {
+				all = {
+					crust = "#0a000c",
+					mantle = "#0a000c",
+					base =  "#0a000c"
+				}
+			},
+			-- transparent_background = true
+		}
+	},
 
 	{ 'nyoom-engineering/oxocarbon.nvim', config = function () end },
 
@@ -202,4 +209,9 @@ require("lazy").setup({
 
 	{ "ellisonleao/gruvbox.nvim", opts = {} },
 
+	{
+		"xero/evangelion.nvim",
+		lazy = false,
+		priority = 1000,
+	}
 })
