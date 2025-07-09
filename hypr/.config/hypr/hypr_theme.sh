@@ -3,12 +3,16 @@
 if test -d "$HOME/.config/hypr/themes/$1/"; then
 	# Set Hyprland config
 	rm ~/.config/hypr/look_and_feel.conf
-	rm ~/.config/hypr/hyprpaper.conf
+	# rm ~/.config/hypr/hyprpaper.conf
 	rm ~/.config/hypr/plugins.conf
 
 	ln -s ~/.config/hypr/themes/$1/look_and_feel.conf ~/.config/hypr/look_and_feel.conf
-	ln -s ~/.config/hypr/themes/$1/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
+	# ln -s ~/.config/hypr/themes/$1/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
 	ln -s ~/.config/hypr/themes/$1/plugins.conf ~/.config/hypr/plugins.conf
+
+	# Set wallpaper
+	rm ~/.wallpaper
+	ln -s ~/.wallpapers/$1/.wallpaper ~/.wallpaper
 
 	# Set waybar config
 	rm ~/.config/waybar/style.css
@@ -40,8 +44,11 @@ if test -d "$HOME/.config/hypr/themes/$1/"; then
 	hyprctl reload > /dev/null
 
 	# Reload hyprpaper
-	killall hyprpaper
-	hyprpaper > /dev/null &
+	# killall hyprpaper
+	# hyprpaper > /dev/null &
+	
+	# Show wallpaper
+	swww img ~/.wallpaper --transition-type grow --transition-duration 1
 
 	# Reload waybar
 	killall waybar
