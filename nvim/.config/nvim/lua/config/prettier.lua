@@ -6,6 +6,7 @@ prettier.setup({
     	"javascript",
 		"javascriptreact",
     	"json",
+		"jsonc",
     	"less",
     	"markdown","scss",
     	"typescript",
@@ -27,5 +28,6 @@ prettier.setup({
     	single_quote = false,
     	tab_width = 4,
     	use_tabs = true,
+		trailing_comma = "none"
 	}
 })
