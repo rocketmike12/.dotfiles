@@ -2,14 +2,14 @@
 
 if [ $TERM == "kitty" ]; then
 	kitty @ set-spacing padding=0;
-	/usr/bin/nvim $@;
+	/usr/bin/nvim --listen /tmp/nvimsocket $@;
 	kitty @ set-spacing padding=5;
 else
 	if [ $TERM == "alacritty" ]; then
 		alacritty msg config "window.padding={ x=0, y=0 }";
-		/usr/bin/nvim $@;
+		/usr/bin/nvim --listen /tmp/nvimsocket $@;
 		alacritty msg config --reset;
 	else
-		/usr/bin/nvim $@;		
+		/usr/bin/nvim --listen /tmp/nvimsocket $@;		
 	fi
 fi	

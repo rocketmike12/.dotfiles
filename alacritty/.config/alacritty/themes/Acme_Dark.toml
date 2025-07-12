@@ -25,3 +25,5 @@ magenta = "#505050"
 cyan = "#aeeeee"	
 white = "#fcfcce"	
 
+[window]
+opacity = 0.85

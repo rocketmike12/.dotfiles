@@ -111,13 +111,21 @@ require("lazy").setup({
 
 	{ 'tmsvg/pear-tree', config = function() end },
 
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		config = true
+		-- use opts = {} for passing setup options
+		-- this is equivalent to setup({}) function
+	},
+
 	-- live-server
 	{
-        'barrett-ruth/live-server.nvim',
-        build = 'pnpm add -g live-server',
-        cmd = { 'LiveServerStart', 'LiveServerStop' },
-        config = true
-    },
+		'barrett-ruth/live-server.nvim',
+		build = 'pnpm add -g live-server',
+		cmd = { 'LiveServerStart', 'LiveServerStop' },
+		config = true
+	},
 
 	-- nvim-tree
 	{ 'nvim-tree/nvim-web-devicons', opts = {} },
@@ -127,30 +135,30 @@ require("lazy").setup({
 	{
 		'olrtg/nvim-emmet',
 		config = function()
-    		vim.keymap.set({'n', 'i'}, '<C-E>', require('nvim-emmet').wrap_with_abbreviation)
-  		end,
+			vim.keymap.set({'n', 'i'}, '<C-E>', require('nvim-emmet').wrap_with_abbreviation)
+		end,
 	},
 
 	-- Alpha dashboard
 	{
-    	"goolord/alpha-nvim",
-    	-- dependencies = { 'echasnovski/mini.icons' },
-    	dependencies = { 'nvim-tree/nvim-web-devicons' },
-    	config = function()
-      		local startify = require("alpha.themes.startify")
-      		-- available: devicons, mini, default is mini
-      		-- if provider not loaded and enabled is true, it will try to use another provider
-      		startify.file_icons.provider = "devicons"
-      		require("alpha").setup(
-        		startify.config
-      		)
-    	end,
-  	},
+		"goolord/alpha-nvim",
+		-- dependencies = { 'echasnovski/mini.icons' },
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		config = function()
+			local startify = require("alpha.themes.startify")
+			-- available: devicons, mini, default is mini
+			-- if provider not loaded and enabled is true, it will try to use another provider
+			startify.file_icons.provider = "devicons"
+			require("alpha").setup(
+				startify.config
+			)
+		end,
+	},
 
 	-- Lualine
 	{
-    	'nvim-lualine/lualine.nvim',
-    	dependencies = { 'nvim-tree/nvim-web-devicons' },
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
 	},
 
 	-- yuck language support
@@ -194,14 +202,14 @@ require("lazy").setup({
 
 	{ 'nyoom-engineering/oxocarbon.nvim', config = function () end },
 
-  	{
-    	"baliestri/aura-theme",
-    	lazy = false,
-    	priority = 1000,
-    	config = function(plugin)
-      		vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-    	end
-  	},
+	{
+		"baliestri/aura-theme",
+		lazy = false,
+		priority = 1000,
+		config = function(plugin)
+			vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+		end
+	},
 
 	{ "rose-pine/neovim", name = "rose-pine", opts = {} },
 

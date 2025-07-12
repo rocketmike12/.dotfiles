@@ -1,6 +1,9 @@
 #!/bin/bash
 
 if test -d "$HOME/.config/hypr/themes/$1/"; then
+	# Set theme file
+	echo $1 > ~/.hypr_theme
+
 	# Set Hyprland config
 	rm ~/.config/hypr/look_and_feel.conf
 
@@ -51,4 +54,7 @@ if test -d "$HOME/.config/hypr/themes/$1/"; then
 
 	# Reload alacritty config
 	touch ~/.config/alacritty/alacritty.toml
+
+	# Reload neovim
+	nvr --remote-send ":source ~/.config/nvim/init.lua<CR>"
 fi

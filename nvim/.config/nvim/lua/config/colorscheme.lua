@@ -1,10 +1,19 @@
--- require('palenight').set()
+-- require("palenight").set()
 
 -- vim.cmd[[colorscheme dracula]]
 
 -- vim.cmd[[colorscheme kanagawa]]
 
--- vim.cmd.colorscheme 'fluoromachine'
+-- vim.cmd.colorscheme "fluoromachine"
+
+local content = vim.fn.readfile("/home/mike/.hypr_theme")
+local output = vim.trim(table.concat(content, "\n"))
+
+if output == "night" then
+	require("catppuccin").setup({
+		transparent_background = true
+	})
+end
 
 vim.cmd.colorscheme "catppuccin"
 vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#cba6f7", bg = "NONE" })
