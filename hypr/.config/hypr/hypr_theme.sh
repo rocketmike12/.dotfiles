@@ -56,5 +56,5 @@ if test -d "$HOME/.config/hypr/themes/$1/"; then
 	touch ~/.config/alacritty/alacritty.toml
 
 	# Reload neovim
-	nvr --remote-send ":source ~/.config/nvim/init.lua<CR>"
+	nvr --servername ~/.nvimsocket --remote-send ":source ~/.config/nvim/lua/config/colorscheme.lua<CR>"
 fi

@@ -137,6 +137,8 @@ PATH="$NPM_PACKAGES/bin:$PATH:~/.local/bin:~/.cargo/bin/"
 SCRIPTS="${HOME}/.scripts"
 PATH="$PATH:$SCRIPTS"
 
+alias c="clear"
+
 alias nvim="~/.scripts/nvim"
 alias vi="nvim"
 

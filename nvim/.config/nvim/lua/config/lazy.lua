@@ -170,6 +170,8 @@ require("lazy").setup({
 	-- neocord
 	{ 'IogaMaster/neocord', event = "VeryLazy", opts = {} },
 
+	-- { 'edluffy/hologram.nvim', opts={} },
+
 	-- THEMES
 	{ 'Mofiqul/dracula.nvim', opts = {} },
 
@@ -221,5 +223,14 @@ require("lazy").setup({
 		"xero/evangelion.nvim",
 		lazy = false,
 		priority = 1000,
+	},
+
+	{
+		'olivercederborg/poimandres.nvim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require('poimandres').setup {}
+		end
 	}
 })

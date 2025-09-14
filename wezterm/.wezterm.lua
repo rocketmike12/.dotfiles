@@ -5,14 +5,14 @@ local config = wezterm.config_builder()
 config.font = wezterm.font 'Hack'
 config.font_size = 12
 
-local TMEcolor = wezterm.color.get_builtin_schemes()['Catppuccin Mocha'];
-TMEcolor.ansi[1] = '#120d16'
-TMEcolor.brights[1] = '#1f1626'
+local wildppuccin = wezterm.color.get_builtin_schemes()['Catppuccin Mocha'];
+wildppuccin.ansi[1] = '#120d16'
+wildppuccin.brights[1] = '#1f1626'
 
 config.color_schemes = {
-	['TME'] = TMEcolor,
+	['wildppuccin'] = wildppuccin,
 }
-config.color_scheme = 'TME';
+config.color_scheme = 'wildppuccin';
 
 -- config.color_scheme = 'Catppuccin Mocha'
 config.colors = {

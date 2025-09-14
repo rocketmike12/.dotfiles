@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-    background: #000000;
+    background: rgba(0, 0, 0, 0.85);
     border: 2px solid #fcfcce;
     border-radius: 4px;
 }
@@ -78,7 +78,7 @@ tooltip label {
 #battery,
 #tray,
 #language {
-    background-color: #101010;
+    background-color: rgba(6, 6, 6, 0.85);
     border: 2px solid #fcfcce;
     color: #fcfcce;
 }

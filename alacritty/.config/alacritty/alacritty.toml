@@ -6,6 +6,7 @@ padding = { x = 8, y = 8 }
 
 [font]
 normal = { family = "Hack Nerd Font Mono", style = "Regular" }
+# normal = { family = "SF Mono", style = "Regular" }
 size = 12
 
 [cursor]
