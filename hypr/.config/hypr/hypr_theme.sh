@@ -37,6 +37,11 @@ if test -d "$HOME/.config/hypr/themes/$1/"; then
 
 	ln -s ~/.config/rofi/$1/config.rasi ~/.config/rofi/config.rasi
 
+	# Set firefox theme
+	rm ~/.mozilla/firefox/jtrrvfnc.dev-edition-default/chrome/theme.css
+	
+	ln -s ~/.mozilla/firefox/jtrrvfnc.dev-edition-default/chrome/themes/$1/theme.css ~/.mozilla/firefox/jtrrvfnc.dev-edition-default/chrome/theme.css
+
 	## Reload everything
 
 	# Reload Hyprland

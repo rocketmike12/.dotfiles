@@ -7,7 +7,8 @@
   --tf-bg: var(--theme-bg-color, -moz-dialog); /* Background color of all elements, tab colors derive from this */
   --tf-fg: var(--theme-fg-color); /* Foreground color of all elements */
   --tf-border: var(--theme-border-color, --toolbar-field-background-color); /* Border color when not hovered */
-  --tf-border-transition: 0.2s ease; /* Smooth color transitions for borders */
+  /* --tf-border-transition: 0.2s ease; Smooth color transitions for borders */
+  --tf-border-transition: 0;
   --tf-border-width: 2px; /* Width of borders */
   --tf-rounding: 0px; /* Border radius used through out the config */
   --tf-margin: 0.8rem; /* Margin used between elements in sidebery */
