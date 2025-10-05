@@ -53,7 +53,7 @@ setup_server("jsonls", {
 })
 
 -- Emmet
-setup_server("emmet_ls", {
-	cmd = { "emmet-ls", "--stdio" },
+setup_server("emmet_language_server", {
+	cmd = { "emmet-language-server", "--stdio" },
 	filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescriptreact" },
 })

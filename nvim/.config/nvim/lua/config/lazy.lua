@@ -4,14 +4,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
 	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 	if vim.v.shell_error ~= 0 then
-    	vim.api.nvim_echo({
-      		{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      		{ out, "WarningMsg" },
-      		{ "\nPress any key to exit..." },
-    	}, true, {})
-    	vim.fn.getchar()
-    	os.exit(1)
-  	end
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out, "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -25,89 +25,121 @@ require("lazy").setup({
 	-- Plugins
 
 	-- require('config.mason'),
-	-- require('config.lspconfig'),
-	-- require('config.cmp'),
 
 	-- nvim-cmp
-  	{
-    	'hrsh7th/nvim-cmp',
-    	dependencies = {
-      		'hrsh7th/cmp-nvim-lsp',
-      		'hrsh7th/cmp-buffer',
-      		'hrsh7th/cmp-path',
-      		'hrsh7th/cmp-cmdline',
-      		'L3MON4D3/LuaSnip',
-      		'saadparwaiz1/cmp_luasnip',
-      		'rafamadriz/friendly-snippets',
-    	},
+	{
+		'hrsh7th/nvim-cmp',
+		dependencies = {
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-cmdline',
+			'L3MON4D3/LuaSnip',
+			'saadparwaiz1/cmp_luasnip',
+			'rafamadriz/friendly-snippets',
+		},
 
-    	config = function()
+		lazy = false,
+
+		config = function()
 			require('config.cmp')
-    	end
-  	},
+		end
+	},
 
 	-- lsp stuff
-  	{
-		'neovim/nvim-lspconfig',
-    	config = function()
-      		require('config.lsp')
-    	end
-  	},
-
 	{
-  		"williamboman/mason.nvim",
-  		build = ":MasonUpdate",
-  		config = true
+		'neovim/nvim-lspconfig',
+		lazy = false,
+		config = function()
+			require('config.lsp')
+		end
 	},
 
 	{
-  		"williamboman/mason-lspconfig.nvim",
-  		dependencies = { "mason.nvim" },
-  		config = function()
-    		require("mason").setup()
-    		require("mason-lspconfig").setup({
-      			ensure_installed = {
+		"williamboman/mason.nvim",
+		build = ":MasonUpdate",
+		lazy = false,
+		config = true
+	},
+
+	{
+		"williamboman/mason-lspconfig.nvim",
+		dependencies = { "mason.nvim" },
+		lazy = false,
+		config = function()
+			require("mason").setup()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
 					"lua_ls",
 					"html",
 					"cssls",
 					"jsonls",
-					"ts_ls",
-					"emmet_ls",
+					"ts_ls"
 				}
-    		})
-  		end
+			})
+		end
 	},
 
 	-- { 'jose-elias-alvarez/null-ls.nvim' },
-	{ 'nvimtools/none-ls.nvim' },
+	{
+		'nvimtools/none-ls.nvim',
+		config = function ()
+			require("config.none_ls")
+		end
+	},
+
+	{
+		"folke/trouble.nvim",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("config.diagnostics")
+			require("trouble").setup {
+				use_lsp_diagnostic_signs = true,
+				icons = true,
+				use_diagnostic_signs = true,
+				auto_open = false,
+				auto_close = true,
+				fold_open = "",
+				fold_closed = "",
+				signs = {
+					error = "",
+					warning = "",
+					hint = "",
+					information = ""
+				},
+				indent_lines = true,
+				mode = "document_diagnostics",
+			}
+		end
+	},
 
 	-- Prettier
 	{ 'MunifTanjim/prettier.nvim' },
 
 	-- Treesitter
 	{
-	   	"nvim-treesitter/nvim-treesitter",
-	   	build = ":TSUpdate",
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
 		priority = 1,
 
-	   	config = function ()
-	     		local configs = require("nvim-treesitter.configs")
+		config = function ()
+			local configs = require("nvim-treesitter.configs")
 
-	     		configs.setup({
-	         		ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
-	         		sync_install = false,
-	         		highlight = { enable = true },
+			configs.setup({
+				ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
+				sync_install = false,
+				highlight = { enable = true },
 				indent = { enable = true },
 				additional_vim_regex_highlighting = false,
-	       	})
-	   	end
+			})
+		end
 	},
 
 	-- Telescope
 	{
-    	'nvim-telescope/telescope.nvim', tag = '0.1.8',
-    	dependencies = { 'nvim-lua/plenary.nvim' }
-    },
+		'nvim-telescope/telescope.nvim', tag = '0.1.8',
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
 
 	{ 'tmsvg/pear-tree', config = function() end },
 
@@ -117,14 +149,6 @@ require("lazy").setup({
 		config = true
 		-- use opts = {} for passing setup options
 		-- this is equivalent to setup({}) function
-	},
-
-	-- live-server
-	{
-		'barrett-ruth/live-server.nvim',
-		build = 'pnpm add -g live-server',
-		cmd = { 'LiveServerStart', 'LiveServerStop' },
-		config = true
 	},
 
 	-- nvim-tree
@@ -159,6 +183,14 @@ require("lazy").setup({
 	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
+	},
+
+	-- live-server
+	{
+		'barrett-ruth/live-server.nvim',
+		build = 'pnpm add -g live-server',
+		cmd = { 'LiveServerStart', 'LiveServerStop' },
+		config = true
 	},
 
 	-- yuck language support
