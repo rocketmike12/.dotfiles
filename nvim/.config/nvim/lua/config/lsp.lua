@@ -1,45 +1,59 @@
-local lspconfig = require("lspconfig")
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+local function setup_server(name, opts)
+	vim.lsp.config[name] = vim.tbl_deep_extend("force", {
+		capabilities = capabilities,
+	}, opts or {})
+	vim.lsp.start(vim.lsp.config[name])
+end
 
 -- Lua
-lspconfig.lua_ls.setup({
-	capabilities = capabilities,
- 	root_dir = lspconfig.util.root_pattern(".git", "init.lua"),
-  	settings = {
-    	Lua = {
-      		runtime = {
-        	version = "LuaJIT",
-        	path = vim.split(package.path, ";"),
-      	},
-      	diagnostics = {
-        	globals = { "vim" },
-      	},
-      	workspace = {
-        	library = {
-          		vim.env.VIMRUNTIME,
-          		vim.fn.stdpath("config"),
-        	},
-        	checkThirdParty = false,
-      	},
-      	telemetry = { enable = false },
-    },
-  },
+setup_server("lua_ls", {
+	cmd = { "lua-language-server" },
+	root_dir = vim.fs.root(0, { ".git", "init.lua" }),
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+				path = vim.split(package.path, ";"),
+			},
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = {
+					vim.env.VIMRUNTIME,
+					vim.fn.stdpath("config"),
+				},
+				checkThirdParty = false,
+			},
+			telemetry = { enable = false },
+		},
+	},
 })
 
-
--- JS, TS
-lspconfig.ts_ls.setup {}
+-- TS/JS
+setup_server("ts_ls", {
+	cmd = { "typescript-language-server", "--stdio" },
+})
 
 -- HTML
-lspconfig.html.setup {}
+setup_server("html", {
+	cmd = { "vscode-html-language-server", "--stdio" },
+})
 
 -- CSS
-lspconfig.cssls.setup {}
+setup_server("cssls", {
+	cmd = { "vscode-css-language-server", "--stdio" },
+})
 
 -- JSON
-lspconfig.jsonls.setup {}
+setup_server("jsonls", {
+	cmd = { "vscode-json-language-server", "--stdio" },
+})
 
 -- Emmet
-lspconfig.emmet_ls.setup {
-  filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescriptreact" }
-}
+setup_server("emmet_ls", {
+	cmd = { "emmet-ls", "--stdio" },
+	filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescriptreact" },
+})

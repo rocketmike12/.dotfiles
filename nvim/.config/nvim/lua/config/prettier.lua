@@ -11,6 +11,7 @@ prettier.setup({
     	"markdown","scss",
     	"typescript",
 		"typescriptreact",
+		"lua"
   	},
 	cli_options = {
     	arrow_parens = "always",
