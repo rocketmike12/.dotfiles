@@ -204,6 +204,8 @@ require("lazy").setup({
 
 	-- { 'edluffy/hologram.nvim', opts={} },
 
+	{ 'glacambre/firenvim', build = ":call firenvim#install(0)" },
+
 	-- THEMES
 	{ 'Mofiqul/dracula.nvim', opts = {} },
 
