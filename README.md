@@ -1,18 +1,12 @@
 # .dotfiles
 My dotfiles repo. Contains files for my Hyprland setup and my LXQt setup, as well as some applications
 <details> 
-<summary>
-		
-# Hyprland
-		
-</summary>
+<summary>Hyprland</summary>
 
+<ul>
+<li>
 <details> 
-<summary>
-	
-## Hyprland
-
-</summary>
+<summary>Hyprland</summary>
 
 ### Machine
 ![screenshot](.resources/machine_00.png)
@@ -41,13 +35,10 @@ My dotfiles repo. Contains files for my Hyprland setup and my LXQt setup, as wel
 ![screenshot](.resources/zen_03.png)
 
 </details>
-
+</li>
+<li>
 <details>
-<summary>
-	
-## Waybar
-
-</summary>
+<summary>Waybar</summary>
 
 ### Config based on [MubinMuhammad's config](https://github.com/MubinMuhammad/MinimalSwayFX/tree/main/waybar)
 ![waybar screenshot](.resources/machine_waybar.png)
@@ -56,3 +47,5 @@ My dotfiles repo. Contains files for my Hyprland setup and my LXQt setup, as wel
 ![waybar screenshot](.resources/zen_waybar.png)
 
 </details>
+</li>
+</ul>
