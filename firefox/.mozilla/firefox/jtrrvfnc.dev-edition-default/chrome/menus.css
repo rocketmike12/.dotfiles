@@ -4,7 +4,7 @@ panel {
 	--panel-border-radius: var(--tf-rounding) !important;
 	--panel-border-color: var(--tf-accent) !important;
 	--panel-separator-color: var(--tf-border) !important;
-	--panel-color: var(--tf-fg) !important;
+	--panel-color: var(--theme-fg-color) !important;
 }
 
 slot[part="content"] {
@@ -35,4 +35,9 @@ menuitem {
 
 menuitem {
 	border-radius: var(--tf-rounding) !important;
+	color: var(--panel-color) !important;
+}
+
+menuitem:hover {
+	color: var(--theme-fg-color-alt) !important;
 }
