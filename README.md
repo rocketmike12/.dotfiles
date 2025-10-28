@@ -1,18 +1,51 @@
 # .dotfiles
 My dotfiles repo. Contains files for my Hyprland setup and my LXQt setup, as well as some applications
-# Hyprland
+<details> 
+<summary>Hyprland</summary>
 
-## Machine
-![screenshot](.resources/2025-03-07-132136_hyprshot.png)
-![screenshot](.resources/2025-03-06-165130_hyprshot.png)
-![screenshot](.resources/2025-03-07-132112_hyprshot.png)
-![screenshot](.resources/2025-03-07-134049_hyprshot.png)
+<ul>
+<li>
+<details> 
+<summary>Hyprland</summary>
 
-## Matrix
-![screenshot](.resources/2025-03-29-214346_hyprshot.png)
-![screenshot](.resources/2025-03-29-215459_hyprshot.png)
-![screenshot](.resources/2025-03-30-131958_hyprshot.png)
+### Machine
+![screenshot](.resources/machine_00.png)
+![screenshot](.resources/machine_01.png)
+![screenshot](.resources/machine_02.png)
+![screenshot](.resources/machine_03.png)
+![screenshot](.resources/machine_04.png)
 
-### Waybar config based on [MubinMuhammad's config](https://github.com/MubinMuhammad/MinimalSwayFX/tree/main/waybar)
-![waybar screenshot](.resources/waybar.png)
-![waybar screenshot](.resources/2025-03-30-132206_hyprshot.png)
+### Matrix
+![screenshot](.resources/matrix_00.png)
+![screenshot](.resources/matrix_01.png)
+![screenshot](.resources/matrix_02.png)
+
+### Night
+![screenshot](.resources/night_00.png)
+![screenshot](.resources/night_01.png)
+![screenshot](.resources/night_02.png)
+![screenshot](.resources/night_03.png)
+![screenshot](.resources/night_04.png)
+![screenshot](.resources/night_05.png)
+
+### Zen
+![screenshot](.resources/zen_00.png)
+![screenshot](.resources/zen_01.png)
+![screenshot](.resources/zen_02.png)
+![screenshot](.resources/zen_03.png)
+
+</details>
+</li>
+<li>
+<details>
+<summary>Waybar</summary>
+
+### Config based on [MubinMuhammad's config](https://github.com/MubinMuhammad/MinimalSwayFX/tree/main/waybar)
+![waybar screenshot](.resources/machine_waybar.png)
+![waybar screenshot](.resources/matrix_waybar.png)
+![waybar screenshot](.resources/night_waybar.png)
+![waybar screenshot](.resources/zen_waybar.png)
+
+</details>
+</li>
+</ul>
