@@ -15,10 +15,10 @@ configuration {
 
 * {
 	bg: #000000;
-	bg-alt: #111111;
+	bg-alt: #000000;
 	
 	fg: #ffffff;
-	fg-alt: #7a5a7a;
+	fg-alt: #84609f;
 
 	background-color: @bg;
 

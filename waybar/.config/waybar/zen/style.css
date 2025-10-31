@@ -61,9 +61,9 @@ tooltip label {
 }
 
 #workspaces button.urgent {
-    background-color: #7a5a7a;
+    background-color: #9070a9;
 	color: #000000;
-	border: 2px solid #7a5a7a;
+	border: 2px solid #9070a9;
 }
 
 #clock {
@@ -97,15 +97,15 @@ tooltip label {
 
 #cpu.critical,
 #memory.critical {
-    color: #7a5a7a;
-    border: 2px solid #7a5a7a;
+    color: #9070a9;
+    border: 2px solid #9070a9;
 }
 
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-    color: #7a5a7a;
-    border: 2px solid #7a5a7a;
+    color: #9070a9;
+    border: 2px solid #9070a9;
 }
 
 #custom-launcher {
