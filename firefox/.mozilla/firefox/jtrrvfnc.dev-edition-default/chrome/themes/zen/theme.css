@@ -1,8 +1,10 @@
 :root {
 	--theme-bg-color: #000000;
+	--theme-bg-color-alt: #1f1626;
 	--theme-fg-color: #ffffff;
-	--theme-fg-color-alt: #7a5a7a;
+	--theme-fg-color-alt: #9070a9;
 	--theme-border-color: #ffffff;
-	--theme-border-color-hover: #ffffff;
-	--theme-accent-color: #7a5a7a;
+	--theme-border-color-hover: #9070a9;
+	--theme-accent-color: #9070a9;
+	--theme-accent-color-alt: #c0597d;
 }

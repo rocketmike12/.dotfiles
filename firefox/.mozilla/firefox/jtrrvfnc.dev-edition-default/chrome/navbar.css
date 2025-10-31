@@ -75,7 +75,7 @@
 		padding: 0 2px;
 	}
 	&:hover::before {
-		color: var(--tf-accent);
+		color: var(--tf-accent) !important;
 	}
 
 	&:not([urlbar-exceeds-toolbar-bounds]) {
@@ -104,7 +104,7 @@
 		padding: 0 2px;
 	}
 	&:hover::before {
-		color: var(--tf-accent);
+		color: var(--tf-accent) !important;
 	}
 }
 

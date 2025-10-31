@@ -55,10 +55,28 @@ box#vertical-tabs {
 	#firefox-view-button[open] > .toolbarbutton-icon,
 	.tab-background:is([selected], [multiselected]) {
 		box-shadow: none !important;
-		background-color: var(--tab-selected-bgcolor) !important;
+		/* background-color: var(--tab-selected-bgcolor) !important; */
+		background-color: #000000 !important;
+		border-left: var(--border-width) solid var(--tf-accent) !important;
 	}
+
+	.tabbrowser-tab:is([selected], [multiselected]) label {
+		color: var(--tf-accent) !important;
+	}
+
 	.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected], [multiselected]) {
-		background-color: var(--tab-hover-background-color) !important;
+		/* background-color: var(--tab-hover-background-color) !important; */
+		background-color: #000000 !important;
+	}
+
+	.tabbrowser-tab:hover label {
+		color: var(--tf-accent) !important;
+	}
+
+	#newtab-button {
+		background-color: var(--tf-accent) !important;
+		color: var(--tf-accent) !important;
+		fill: var(--tf-accent) !important;
 	}
 }
 

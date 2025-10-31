@@ -4,8 +4,11 @@
   --tf-font-family: "SF Mono", Consolas, monospace; /* Font family of config */
   --tf-font-size: 14px; /* Font size of config */
   --tf-accent: var(--theme-accent-color); /* Accent color used, eg: color when hovering a container  */
+  --tf-accent-alt: var(--theme-accent-color-alt); /* Accent color used, eg: color when hovering a container  */
   --tf-bg: var(--theme-bg-color, -moz-dialog); /* Background color of all elements, tab colors derive from this */
+  --tf-bg-alt: var(--theme-bg-color-alt, -moz-dialog); /* Background color of all elements, tab colors derive from this */
   --tf-fg: var(--theme-fg-color); /* Foreground color of all elements */
+  --tf-fg-alt: var(--theme-fg-color-alt); /* Foreground color of all elements */
   --tf-border: var(--theme-border-color, --toolbar-field-background-color); /* Border color when not hovered */
   /* --tf-border-transition: 0.2s ease; Smooth color transitions for borders */
   --tf-border-transition: 0;

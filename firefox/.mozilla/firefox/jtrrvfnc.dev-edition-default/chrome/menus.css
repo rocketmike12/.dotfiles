@@ -22,10 +22,12 @@ slot[part="content"] {
 menu,
 menuitem {
 	&:where([_moz-menuactive]:not([disabled="true"])) {
-		background: var(--tab-selected-bgcolor) !important;
+		background: var(--tf-bg) !important;
+		box-shadow: inset var(--border-width) 0 0 var(--tf-accent) !important;
 	}
 	&:where([_moz-menuactive="true"][disabled="true"]) {
-		background: var(--tab-hover-background-color) !important;
+		background: var(--tf-bg) !important;
+		border-left: calc(0 - var(--border-width)) solid var(--tf-accent) !important;
 	}
 }
 
