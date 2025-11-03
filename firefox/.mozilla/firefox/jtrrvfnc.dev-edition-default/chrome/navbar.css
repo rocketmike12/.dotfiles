@@ -82,6 +82,7 @@
 		overflow: unset !important;
 	}
 }
+
 #PersonalToolbar {
 	margin: 8px 8px 2px;
 	padding: 4px !important;
@@ -95,6 +96,7 @@
 	&:focus {
 		border-color: var(--tf-accent) !important;
 	}
+
 	&::before {
 		display: var(--tf-display-titles);
 		content: "bookmarks";
@@ -103,18 +105,66 @@
 		margin: -1.25rem 0.4rem;
 		padding: 0 2px;
 	}
+
 	&:hover::before {
 		color: var(--tf-accent) !important;
 	}
 }
 
-#PlacesToolbarItems {
-	display: flex;
-	justify-content: center;
+#PlacesToolbarItems toolbarbutton.bookmark-item {
+	background-color: var(--tf-bg) !important;
+	border-radius: var(--tf-rounding) !important;
+	color: var(--tf-fg) !important;
+	padding: 8px !important;
 }
 
-toolbarbutton.bookmark-item:not(.subviewbutton) {
+#PlacesToolbarItems toolbarbutton.bookmark-item:hover {
+	box-shadow: inset var(--border-width) 0 0 var(--tf-accent) !important;
+	/* background-color: var(--tf-bg) !important; */
+	color: var(--tf-accent) !important;
 	padding: 8px !important;
+}
+
+/* toolbarbutton.bookmark-item:not(.subviewbutton) { */
+/* 	padding: 8px !important; */
+/* } */
+
+#PlacesToolbarItems {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+}
+
+#PlacesChevron {
+	list-style-image: none !important;
+	font-size: var(--tf-font-size);
+	width: auto !important;
+	margin: 2px !important;
+	background-color: none !important;
+
+	&:hover {
+		background-color: none !important;
+	}
+}
+
+#PlacesChevron .toolbarbutton-icon {
+	display: none;
+}
+
+#PlacesChevron::before {
+	content: ">>";
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 34px;
+	height: 100%;
+	margin: 0 4px !important;
+	/* padding: 0 4px !important; */
+}
+
+#PlacesChevron:hover::before {
+	color: var(--tf-accent) !important;
+	/* background-color: var(--tf-bg-alt); */
 }
 
 :root[tabsintitlebar] #toolbar-menubar[autohide="true"] {

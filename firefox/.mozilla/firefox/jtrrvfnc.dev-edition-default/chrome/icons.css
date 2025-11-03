@@ -4,9 +4,9 @@
 */
 
 /* overflow */
-#PlacesChevron {
-	list-style-image: url("./icons/bookmarks-toolbar.svg") !important;
-}
+/* #PlacesChevron { */
+/* 	list-style-image: url("./icons/bookmarks-toolbar.svg") !important; */
+/* } */
 
 /* hide folders icons */
 .bookmark-item[container="true"] .toolbarbutton-icon {
@@ -32,9 +32,9 @@
  * ─[ MONOCHROME EXTENSIONS - Monochrome icons for some extensions ]───────
 */
 
-#PersonalToolbar {
-	color: var(--tf-fg) !important;
-}
+/* #PersonalToolbar { */
+/* 	color: var(--tf-fg) !important; */
+/* } */
 
 @media (-moz-bool-pref: "shyfox.enable.ext.mono.toolbar.icons") {
 	/* Userchrome Toggle => sidebar icon */

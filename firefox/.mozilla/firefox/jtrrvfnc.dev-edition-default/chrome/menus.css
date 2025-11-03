@@ -43,3 +43,20 @@ menuitem {
 menuitem:hover {
 	color: var(--theme-fg-color-alt) !important;
 }
+
+#appMenu-mainView toolbarbutton {
+	border-radius: var(--tf-rounding) !important;
+	padding: 6px 10px !important;
+}
+
+#appMenu-mainView toolbarbutton:hover {
+	box-shadow: inset var(--border-width) 0 0 var(--tf-accent) !important;
+	background-color: var(--tf-bg) !important;
+	color: var(--tf-accent) !important;
+}
+
+/* hide account area */
+#appMenu-fxa-status2,
+#appMenu-fxa-separator {
+	display: none !important;
+}
