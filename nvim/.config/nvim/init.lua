@@ -21,6 +21,8 @@ vim.g.loaded_netrwPlugin = 1
 require('config.keymaps')
 require('config.lazy')
 
+require('config.aliases')
+
 -- require('config.null_ls')
 require('config.prettier')
 
