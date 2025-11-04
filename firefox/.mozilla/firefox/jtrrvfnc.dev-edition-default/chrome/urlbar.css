@@ -7,6 +7,7 @@
 	border: unset !important;
 	box-shadow: unset !important;
 }
+
 .urlbarView {
 	text-align: start;
 	margin-top: 4px;
@@ -14,11 +15,13 @@
 	border: var(--border-width) solid var(--tf-accent) !important;
 	border-radius: 0 0 var(--tf-rounding) var(--tf-rounding);
 }
+
 .urlbarView-body-inner {
 	#urlbar[open] > .urlbarView > .urlbarView-body-outer > & {
 		border-top: unset !important;
 	}
 }
+
 .urlbarView:not([noresults]) > .search-one-offs:not([hidden]) {
 	border-top: var(--border-width) solid var(--tf-accent) !important;
 }
