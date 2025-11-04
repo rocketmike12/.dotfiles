@@ -31,7 +31,7 @@
 				content: var(--tf-newtab-logo);
 				white-space: pre;
 				display: block;
-				color: var(--newtab-contextual-text-primary-color);
+				color: var(--tf-fg);
 				font-size: var(--tf-font-size);
 				font-weight: 600;
 			}
