@@ -32,6 +32,11 @@ if test -d "$HOME/.config/hypr/themes/$1/"; then
 
 	ln -s ~/.config/alacritty/themes/$1/theme.toml ~/.config/alacritty/theme.toml
 
+	# Set wezterm theme
+	rm ~/.config/wezterm/theme.lua
+
+	ln -s ~/.config/wezterm/$1/theme.lua ~/.config/wezterm/theme.lua
+
 	# Set rofi theme
 	rm ~/.config/rofi/config.rasi
 
@@ -59,6 +64,9 @@ if test -d "$HOME/.config/hypr/themes/$1/"; then
 
 	# Reload alacritty config
 	touch ~/.config/alacritty/alacritty.toml
+
+	# Reload wezterm config
+	touch ~/.wezterm.lua
 
 	# Reload neovim
 	nvr --servername ~/.nvimsocket --remote-send ":source ~/.config/nvim/lua/config/colorscheme.lua<CR>"

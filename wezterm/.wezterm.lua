@@ -5,29 +5,33 @@ local config = wezterm.config_builder()
 config.font = wezterm.font 'Hack'
 config.font_size = 12
 
-local wildppuccin = wezterm.color.get_builtin_schemes()['Catppuccin Mocha'];
-wildppuccin.ansi[1] = '#120d16'
-wildppuccin.brights[1] = '#1f1626'
+-- local wildppuccin = wezterm.color.get_builtin_schemes()['Catppuccin Mocha'];
+-- wildppuccin.ansi[1] = '#120d16'
+-- wildppuccin.brights[1] = '#1f1626'
+--
+-- config.color_schemes = {
+-- 	['wildppuccin'] = wildppuccin,
+-- }
+-- config.color_scheme = 'wildppuccin';
+--
+-- -- config.color_scheme = 'Catppuccin Mocha'
+-- config.colors = {
+-- 	-- background = '#070008',
+-- 	background = '#0a000c',
+--
+-- 	selection_fg = '#000000',
+-- 	selection_bg = '#f5e0dc',
+--
+-- 	split = '#cba6f7'
+-- }
 
-config.color_schemes = {
-	['wildppuccin'] = wildppuccin,
-}
-config.color_scheme = 'wildppuccin';
+local theme = require 'theme'
 
--- config.color_scheme = 'Catppuccin Mocha'
-config.colors = {
-	-- background = "#070008",
-	background = "#0a000c",
-
-	selection_fg = "#000000",
-	selection_bg = "#f5e0dc",
-
-	split = "#cba6f7"
-}
+config.colors = theme.colors
 
 -- config.background = {
 -- 	{
--- 		source = { File = "/home/mike/Pictures/retrowave_dark_purple_field.jpg" },
+-- 		source = { File = '/home/mike/Pictures/retrowave_dark_purple_field.jpg' },
 -- 		hsb = { brightness = 0.04 }
 -- 	}
 -- }
@@ -53,27 +57,27 @@ wezterm.on(
 		local title = tab_title(tab)
 		if tab.is_active then
 			return {
-				{ Background = { Color = "rgba(0, 0, 0, 0)" } },
-				{ Foreground = { Color = "#39092c" } },
+				{ Background = { Color = 'rgba(0, 0, 0, 0)' } },
+				{ Foreground = { Color = '#39092c' } },
 				{ Text = SOLID_LEFT_ARROW },
-				{ Background = { Color = "#39092c" } },
-				{ Foreground = { Color = "#f5e0dc" } },
-				{ Text = "  " .. tab.tab_index + 1 .. " " .. title .. "  " },
-				{ Background = { Color = "rgba(0, 0, 0, 0)" } },
-				{ Foreground = { Color = "#39092c" } },
+				{ Background = { Color = '#39092c' } },
+				{ Foreground = { Color = '#f5e0dc' } },
+				{ Text = '  ' .. tab.tab_index + 1 .. ' ' .. title .. '  ' },
+				{ Background = { Color = 'rgba(0, 0, 0, 0)' } },
+				{ Foreground = { Color = '#39092c' } },
 				{ Text = SOLID_RIGHT_ARROW },
 			}
 
 		else
 			return {
-				{ Background = { Color = "rgba(0, 0, 0, 0)" } },
-				{ Foreground = { Color = "#28071f" } },
+				{ Background = { Color = 'rgba(0, 0, 0, 0)' } },
+				{ Foreground = { Color = '#28071f' } },
 				{ Text = SOLID_LEFT_ARROW },
-				{ Background = { Color = "#28071f" } },
-				{ Foreground = { Color = "#f5e0dc" } },
-				{ Text = "  " .. tab.tab_index + 1 .. " " .. title .. "  " },
-				{ Background = { Color = "rgba(0, 0, 0, 0)" } },
-				{ Foreground = { Color = "#28071f" } },
+				{ Background = { Color = '#28071f' } },
+				{ Foreground = { Color = '#f5e0dc' } },
+				{ Text = '  ' .. tab.tab_index + 1 .. ' ' .. title .. '  ' },
+				{ Background = { Color = 'rgba(0, 0, 0, 0)' } },
+				{ Foreground = { Color = '#28071f' } },
 				{ Text = SOLID_RIGHT_ARROW },
 			}
 		end
@@ -92,43 +96,43 @@ config.keys = {
 		action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
 	},
 	{
-		key = "h",
-		mods = "CTRL",
+		key = 'h',
+		mods = 'CTRL',
 		action = wezterm.action.ActivatePaneDirection('Left')
 	},
 	{
-		key = "j",
-		mods = "CTRL",
+		key = 'j',
+		mods = 'CTRL',
 		action = wezterm.action.ActivatePaneDirection('Down')
 	},
 	{
-		key = "k",
-		mods = "CTRL",
+		key = 'k',
+		mods = 'CTRL',
 		action = wezterm.action.ActivatePaneDirection('Up')
 	},
 	{
-		key = "l",
-		mods = "CTRL",
+		key = 'l',
+		mods = 'CTRL',
 		action = wezterm.action.ActivatePaneDirection('Right')
 	},
 	{
-		key = "h",
-		mods = "CTRL|SHIFT",
+		key = 'h',
+		mods = 'CTRL|SHIFT',
 		action = wezterm.action.AdjustPaneSize { 'Left', 2 }
 	},
 	{
-		key = "j",
-		mods = "CTRL|SHIFT",
+		key = 'j',
+		mods = 'CTRL|SHIFT',
 		action = wezterm.action.AdjustPaneSize { 'Down', 2 }
 	},
 	{
-		key = "k",
-		mods = "CTRL|SHIFT",
+		key = 'k',
+		mods = 'CTRL|SHIFT',
 		action = wezterm.action.AdjustPaneSize { 'Up', 2 }
 	},
 	{
-		key = "l",
-		mods = "CTRL|SHIFT",
+		key = 'l',
+		mods = 'CTRL|SHIFT',
 		action = wezterm.action.AdjustPaneSize { 'Right', 2 }
 	}
 }
