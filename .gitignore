@@ -1,1 +1,8 @@
-do_stow.sh
+alacritty/.config/alacritty/theme.toml
+firefox/.mozilla/firefox/jtrrvfnc.dev-edition-default/chrome/theme.css
+hypr/.config/hypr/look_and_feel.conf
+kitty/.config/kitty/theme.conf
+rofi/.config/rofi/config.rasi
+scripts/.scripts/kitty_theme_hypr
+waybar/.config/waybar/config.jsonc
+waybar/.config/waybar/style.css
