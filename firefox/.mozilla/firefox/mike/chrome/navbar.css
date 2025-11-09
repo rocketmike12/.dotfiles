@@ -19,6 +19,14 @@
 	display: var(--tf-display-nav-buttons);
 }
 
+toolbarbutton:hover > .toolbarbutton-icon {
+	fill: var(--tf-accent) !important;
+}
+
+toolbarbutton:hover {
+	background-color: var(--tf-bg) !important;
+}
+
 /* 
    hide elements of the identity box when:
    the page is secure (using https) and the domain is verified
@@ -92,6 +100,7 @@
 	border-color: var(--tf-border) !important;
 	border-radius: var(--tf-rounding);
 	transition: border-color var(--tf-border-transition) !important;
+
 	&:hover,
 	&:focus {
 		border-color: var(--tf-accent) !important;
@@ -100,7 +109,8 @@
 	&::before {
 		display: var(--tf-display-titles);
 		content: "bookmarks";
-		background-color: var(--tf-bg);
+		background-color: var(--tf-bg) !important;
+		color: var(--tf-fg) !important;
 		position: absolute;
 		margin: -1.25rem 0.4rem;
 		padding: 0 2px;
@@ -159,7 +169,7 @@
 	width: 34px;
 	height: 100%;
 	margin: 0 4px !important;
-	/* padding: 0 4px !important; */
+	color: var(--tf-fg) !important;
 }
 
 #PlacesChevron:hover::before {

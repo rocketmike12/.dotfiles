@@ -1,5 +1,29 @@
+#urlbar-container {
+	background-color: var(--tf-bg) !important;
+}
+
 #urlbar {
-	text-align: center;
+	text-align: left !important;
+
+	& input {
+		background-color: var(--tf-bg) !important;
+		color: var(--tf-fg) !important;
+		caret-color: var(--tf-fg) !important;
+		opacity: 1;
+
+		&::selection {
+			color: var(--tf-bg) !important;
+			background-color: var(--tf-fg) !important;
+		}
+
+		&::placeholder {
+			color: var(--tf-fg) !important;
+		}
+	}
+}
+
+#urlbar-scheme {
+	background-color: #00ff00 !important;
 }
 
 #urlbar-background {
@@ -8,18 +32,51 @@
 	box-shadow: unset !important;
 }
 
+#urlbar-searchmode-switcher {
+	background-color: var(--tf-bg) !important;
+	color: var(--tf-fg) !important;
+	fill: var(--tf-fg) !important;
+}
+
+.searchmode-switcher-chicklet {
+	background-color: var(--tf-bg) !important;
+	color: var(--tf-fg) !important;
+	padding: 5px !important;
+
+	&:hover {
+		color: var(--tf-accent) !important;
+	}
+}
+
+.urlbar-input-box {
+	background-color: transparent !important;
+}
+
 .urlbarView {
 	text-align: start;
 	margin-top: 4px;
 	background-color: var(--tf-bg);
 	border: var(--border-width) solid var(--tf-accent) !important;
+	border-top: none !important;
 	border-radius: 0 0 var(--tf-rounding) var(--tf-rounding);
 }
 
-.urlbarView-body-inner {
-	#urlbar[open] > .urlbarView > .urlbarView-body-outer > & {
-		border-top: unset !important;
-	}
+.urlbarView-row-inner {
+	color: var(--tf-fg) !important;
+}
+
+#urlbar hbox:first-child {
+	background-color: var(--tf-bg) !important;
+	border: none !important;
+	outline: none !important;
+	padding: 0 !important;
+	width: fit-content !important;
+	height: fit-content !important;
+}
+
+.urlbarView-body-inner,
+.urlbarView-body-outer {
+	border-top: unset !important;
 }
 
 .urlbarView:not([noresults]) > .search-one-offs:not([hidden]) {
