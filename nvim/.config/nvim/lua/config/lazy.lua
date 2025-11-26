@@ -28,38 +28,38 @@ require("lazy").setup({
 
 	-- nvim-cmp
 	{
-		'hrsh7th/nvim-cmp',
+		"hrsh7th/nvim-cmp",
 		dependencies = {
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-buffer',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-cmdline',
-			'L3MON4D3/LuaSnip',
-			'saadparwaiz1/cmp_luasnip',
-			'rafamadriz/friendly-snippets',
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
 		},
 
 		lazy = false,
 
 		config = function()
-			require('config.cmp')
-		end
+			require("config.cmp")
+		end,
 	},
 
 	-- lsp stuff
 	{
-		'neovim/nvim-lspconfig',
+		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			require('config.lsp')
-		end
+			require("config.lsp")
+		end,
 	},
 
 	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate",
 		lazy = false,
-		config = true
+		config = true,
 	},
 
 	{
@@ -74,18 +74,18 @@ require("lazy").setup({
 					"html",
 					"cssls",
 					"jsonls",
-					"ts_ls"
-				}
+					"ts_ls",
+				},
 			})
-		end
+		end,
 	},
 
 	-- { 'jose-elias-alvarez/null-ls.nvim' },
 	{
-		'nvimtools/none-ls.nvim',
-		config = function ()
+		"nvimtools/none-ls.nvim",
+		config = function()
 			require("config.none_ls")
-		end
+		end,
 	},
 
 	{
@@ -93,7 +93,7 @@ require("lazy").setup({
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			require("config.diagnostics")
-			require("trouble").setup {
+			require("trouble").setup({
 				use_lsp_diagnostic_signs = true,
 				icons = true,
 				use_diagnostic_signs = true,
@@ -105,16 +105,16 @@ require("lazy").setup({
 					error = "",
 					warning = "",
 					hint = "",
-					information = ""
+					information = "",
 				},
 				indent_lines = true,
 				mode = "document_diagnostics",
-			}
-		end
+			})
+		end,
 	},
 
 	-- Prettier
-	{ 'MunifTanjim/prettier.nvim' },
+	{ "MunifTanjim/prettier.nvim" },
 
 	-- Treesitter
 	{
@@ -122,7 +122,7 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		priority = 1,
 
-		config = function ()
+		config = function()
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
@@ -132,34 +132,35 @@ require("lazy").setup({
 				indent = { enable = true },
 				additional_vim_regex_highlighting = false,
 			})
-		end
+		end,
 	},
 
 	-- Telescope
 	{
-		'nvim-telescope/telescope.nvim', tag = '0.1.8',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.8",
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
-	{ 'tmsvg/pear-tree', config = function() end },
+	{ "tmsvg/pear-tree", config = function() end },
 
 	{
-		'windwp/nvim-autopairs',
+		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		config = true
+		config = true,
 		-- use opts = {} for passing setup options
 		-- this is equivalent to setup({}) function
 	},
 
 	-- nvim-tree
-	{ 'nvim-tree/nvim-web-devicons', opts = {} },
-	{ 'nvim-tree/nvim-tree.lua', opts = {} },
+	{ "nvim-tree/nvim-web-devicons", opts = {} },
+	{ "nvim-tree/nvim-tree.lua", opts = {} },
 
 	-- Emmet
 	{
-		'olrtg/nvim-emmet',
+		"olrtg/nvim-emmet",
 		config = function()
-			vim.keymap.set({'n', 'i'}, '<C-E>', require('nvim-emmet').wrap_with_abbreviation)
+			vim.keymap.set({ "n", "i" }, "<C-E>", require("nvim-emmet").wrap_with_abbreviation)
 		end,
 	},
 
@@ -167,40 +168,41 @@ require("lazy").setup({
 	{
 		"goolord/alpha-nvim",
 		-- dependencies = { 'echasnovski/mini.icons' },
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			local startify = require("alpha.themes.startify")
 			-- available: devicons, mini, default is mini
 			-- if provider not loaded and enabled is true, it will try to use another provider
 			startify.file_icons.provider = "devicons"
-			require("alpha").setup(
-				startify.config
-			)
+			require("alpha").setup(startify.config)
 		end,
 	},
 
 	-- Lualine
 	{
-		'nvim-lualine/lualine.nvim',
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	-- live-server
 	{
-		'barrett-ruth/live-server.nvim',
-		build = 'pnpm add -g live-server',
-		cmd = { 'LiveServerStart', 'LiveServerStop' },
-		config = true
+		"barrett-ruth/live-server.nvim",
+		build = "pnpm add -g live-server",
+		cmd = { "LiveServerStart", "LiveServerStop" },
+		config = true,
 	},
 
 	-- yuck language support
-	{ 'elkowar/yuck.vim' },
+	{
+		"elkowar/yuck.vim",
+		event = "VeryLazy",
+	},
 
 	-- nvim-colorizer
-	{ 'norcalli/nvim-colorizer.lua', opts = {} },
+	{ "norcalli/nvim-colorizer.lua", opts = {} },
 
 	-- neocord
-	{ 'IogaMaster/neocord', event = "VeryLazy", opts = {} },
+	{ "IogaMaster/neocord", event = "VeryLazy", opts = {} },
 
 	-- { 'edluffy/hologram.nvim', opts={} },
 
@@ -214,17 +216,17 @@ require("lazy").setup({
 			require("nvim-surround").setup({
 				-- Configuration here, or leave empty to use defaults
 			})
-		end
+		end,
 	},
 
 	-- THEMES
-	{ 'Mofiqul/dracula.nvim', opts = {} },
+	{ "Mofiqul/dracula.nvim", opts = {} },
 
-	{ 'wilmanbarrios/palenight.nvim' },
+	{ "wilmanbarrios/palenight.nvim" },
 
 	{ "rebelot/kanagawa.nvim", opts = {} },
 
-	{ 'maxmx03/fluoromachine.nvim', opts = {}},
+	{ "maxmx03/fluoromachine.nvim", opts = {} },
 
 	{
 		"catppuccin/nvim",
@@ -240,14 +242,14 @@ require("lazy").setup({
 				all = {
 					crust = "#0a000c",
 					mantle = "#0a000c",
-					base =  "#0a000c"
-				}
+					base = "#0a000c",
+				},
 			},
-			transparent_background = true
-		}
+			transparent_background = true,
+		},
 	},
 
-	{ 'nyoom-engineering/oxocarbon.nvim', config = function () end },
+	{ "nyoom-engineering/oxocarbon.nvim", config = function() end },
 
 	{
 		"baliestri/aura-theme",
@@ -255,12 +257,12 @@ require("lazy").setup({
 		priority = 1000,
 		config = function(plugin)
 			vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-		end
+		end,
 	},
 
 	{ "rose-pine/neovim", name = "rose-pine", opts = {} },
 
-	{ 'loctvl842/monokai-pro.nvim', opts = {} },
+	{ "loctvl842/monokai-pro.nvim", opts = {} },
 
 	{ "ellisonleao/gruvbox.nvim", opts = {} },
 
@@ -271,11 +273,11 @@ require("lazy").setup({
 	},
 
 	{
-		'olivercederborg/poimandres.nvim',
+		"olivercederborg/poimandres.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require('poimandres').setup {}
-		end
-	}
+			require("poimandres").setup({})
+		end,
+	},
 })

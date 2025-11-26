@@ -5,10 +5,10 @@ vim.diagnostic.config({
 	severity_sort = true,
 })
 
-vim.cmd [[
+vim.cmd([[
 	hi NormalFloat guibg=#0a000c
 	hi FloatBorder guibg=#0a000c
-]]
+]])
 
 vim.o.updatetime = 250
 vim.api.nvim_create_autocmd("CursorHold", {
@@ -17,19 +17,19 @@ vim.api.nvim_create_autocmd("CursorHold", {
 			focusable = false,
 			border = "rounded",
 			source = "always",
-			header = ""
+			header = "",
 		})
-	end
+	end,
 })
 
-vim.fn.sign_define("DiagnosticSignError",  {text = "", texthl = "DiagnosticError"})
-vim.fn.sign_define("DiagnosticSignWarn",   {text = "", texthl = "DiagnosticWarn"})
-vim.fn.sign_define("DiagnosticSignInfo",   {text = "", texthl = "DiagnosticInfo"})
-vim.fn.sign_define("DiagnosticSignHint",   {text = "H", texthl = "DiagnosticHint"})
+vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticWarn" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "H", texthl = "DiagnosticHint" })
 
-vim.cmd [[
+vim.cmd([[
 	hi DiagnosticError guifg=#ff4d6d guibg=NONE
 	hi DiagnosticWarn guifg=#ffa500 guibg=NONE
 	hi DiagnosticInfo guifg=#00ffff guibg=NONE
 	hi DiagnosticHint guifg=#ff00ff guibg=NONE
-]]
+]])
