@@ -57,3 +57,9 @@ setup_server("emmet_language_server", {
 	cmd = { "emmet-language-server", "--stdio" },
 	filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescriptreact" },
 })
+
+-- C++
+setup_server("clangd", {
+	cmd = { "clangd" },
+	filetypes = { "c", "cpp" },
+})

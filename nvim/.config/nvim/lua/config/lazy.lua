@@ -75,6 +75,7 @@ require("lazy").setup({
 					"cssls",
 					"jsonls",
 					"ts_ls",
+					"clangd",
 				},
 			})
 		end,
