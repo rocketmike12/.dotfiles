@@ -140,8 +140,10 @@ SCRIPTS="${HOME}/.scripts"
 PATH="$PATH:$SCRIPTS"
 
 alias c="clear"
+alias q="exit"
+alias d="exit"
 
 alias nvim="~/.scripts/nvim"
-# alias vi="nvim"
+alias v="nvim"
 
 alias ff="fastfetch"
