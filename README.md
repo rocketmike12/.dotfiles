@@ -43,7 +43,6 @@ Currently broken configs:
 ![screenshot](.resources/night_00.png)
 ![screenshot](.resources/night_01.png)
 ![screenshot](.resources/night_02.png)
-![screenshot](.resources/night_03.png)
 ![screenshot](.resources/night_04.png)
 ![screenshot](.resources/night_05.png)
 
