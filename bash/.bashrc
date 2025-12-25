@@ -142,6 +142,7 @@ PATH="$PATH:$SCRIPTS"
 alias c="clear"
 alias q="exit"
 alias d="exit"
+alias t="tmux"
 
 alias nvim="~/.scripts/nvim"
 alias v="nvim"
