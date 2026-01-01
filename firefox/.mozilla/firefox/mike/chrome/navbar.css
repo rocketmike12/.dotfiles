@@ -13,6 +13,10 @@
 	display: var(--tf-display-urlbar-icons);
 }
 
+#sidebar-button {
+	margin: 0 !important;
+}
+
 /* configurable navigation buttons */
 #back-button,
 #forward-button {

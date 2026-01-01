@@ -51,3 +51,7 @@ browser {
 		background-image: var(--lwt-accent-color) !important;
 	}
 }
+
+#navigator-toolbox[fullscreenShouldAnimate] {
+  transition: 0ms !important;
+}
