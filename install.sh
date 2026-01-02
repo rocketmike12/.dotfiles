@@ -2,83 +2,63 @@
 
 set -e
 
-categories=("modules" "profiles" "DONE")
-modules=("scripts" "wallpapers" "bash" "zsh" "alacritty" "kitty" "wezterm" "nvim" "hypr" "waybar" "rofi" "firefox" "DONE")
-profiles=("hyprland (hypr + waybar + rofi + scripts)" "nvim (nvim + tmux + alacritty)" "all" "DONE")
+ROOT="$(cd "$(dirname "$0")" && pwd)"
 
-PS3="select installation category: "
-select opt1 in "${categories[@]}"; do
-	case "$opt1" in
-		modules)
-			PS3="select module to install: "
-			select opt2 in "${modules[@]}"; do
-				case "$opt2" in 
-					DONE)
-						break
-						;;
-					*)
-						echo "$opt2"
-						;;
-				esac
-			done
+detect_gum() {
+	if command -v gum >/dev/null 2>&1; then echo "gum"
+		return
+	fi
 
-			break
-			;;
+	os="$(uname -s | tr '[:upper:]' '[:lower:]')"
+	arch="$(uname -m)"
 
-		profiles)
-			PS3="select profile to install: "
-			select opt2 in "${profiles[@]}"; do
-				case "$REPLY" in 
-					1)
-						echo "hypr waybar rofi scripts"
-						;;
-					2)
-						echo "nvim tmux alacritty"
-						;;
-					3)
-						echo "scripts wallpapers bash zsh alacritty kitty wezterm nvim hypr waybar rofi firefox"
-						;;
-					4)
-						break
-						;;
-				esac
-			done
-
-			break
-			;;
-
-		DONE)
-			break
-			;;
+	case "$arch" in
+		x86_64) arch=amd64 ;;
+		aarch64) arch=arm64 ;;
 	esac
+
+	gum_bin="$ROOT/bin/gum-$os-$arch"
+
+	if [[ -x "$gum_bin" ]]; then
+		echo "$gum_bin"
+		return
+	fi
+
+	echo "bundled gum not available for $os/$arch
+please install charmbracelet/gum or use install_select.sh instead" >&2
+	exit 1
+}
+
+GUM="$(detect_gum)"
+
+"$GUM" style --foreground "#cba6f7" "
+
+██████╗ ███╗   ███╗ ██╗██████╗       ██╗  ██╗██╗   ██╗██████╗ ██████╗ 
+██╔══██╗████╗ ████║███║╚════██╗      ██║  ██║╚██╗ ██╔╝██╔══██╗██╔══██╗
+██████╔╝██╔████╔██║╚██║ █████╔╝█████╗███████║ ╚████╔╝ ██████╔╝██████╔╝
+██╔══██╗██║╚██╔╝██║ ██║██╔═══╝ ╚════╝██╔══██║  ╚██╔╝  ██╔═══╝ ██╔══██╗
+██║  ██║██║ ╚═╝ ██║ ██║███████╗      ██║  ██║   ██║   ██║     ██║  ██║
+╚═╝  ╚═╝╚═╝     ╚═╝ ╚═╝╚══════╝      ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝  ╚═╝
+
+"
+
+modules=("scripts" "wallpapers" "bash" "zsh" "alacritty" "kitty" "wezterm" "nvim" "hypr" "waybar" "rofi" "firefox")
+
+OPTS=$("$GUM" choose \
+	--no-limit \
+	--title.foreground="#b4befe" \
+	--cursor.foreground="#cba6f7" \
+	--selected.foreground="#cba6f7" \
+	"${modules[@]}")
+
+[ -z "$OPTS" ] && exit 0
+
+for module in $OPTS; do
+	"$GUM" spin \
+		--spinner dot \
+		--spinner.foreground="#cba6f7" \
+		--title "installing $("$GUM" style --foreground "#a6e3a1" --bold "$module")" \
+		-- sleep 1
 done
 
-# set -e
-#
-# categories=("modules" "profiles" "DONE")
-# modules=("scripts" "wallpapers" "bash" "zsh" "alacritty" "kitty" "wezterm" "nvim" "hypr" "waybar" "rofi" "firefox" "DONE")
-#
-# PS3="select installation category: "
-# select opt1 in "${categories[@]}"; do
-# 	case "$opt1" in
-# 		modules)
-# 			PS3="select module: "
-# 			select opt2 in "${modules[@]}"; do
-# 				case "$opt2" in
-# 					DONE)
-# 						break
-# 						;;
-# 					*)
-# 						echo "Installing module: $opt2"
-# 						;;
-# 				esac
-# 			done
-# 			;;
-# 		profiles)
-# 			echo "Profiles selected"
-# 			;;
-# 		DONE)
-# 			break
-# 			;;
-# 	esac
-# done
+"$GUM" style --foreground "#a6e3a1" --bold "installation complete"
