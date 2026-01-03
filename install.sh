@@ -46,7 +46,7 @@ modules=("scripts" "wallpapers" "bash" "zsh" "alacritty" "kitty" "wezterm" "nvim
 
 OPTS=$("$GUM" choose \
 	--no-limit \
-	--title.foreground="#b4befe" \
+	--header.foreground="#b4befe" \
 	--cursor.foreground="#cba6f7" \
 	--selected.foreground="#cba6f7" \
 	"${modules[@]}")
