@@ -139,6 +139,8 @@ PATH="$NPM_PACKAGES/bin:$PATH:~/.local/bin:~/.cargo/bin/"
 SCRIPTS="${HOME}/.scripts"
 PATH="$PATH:$SCRIPTS"
 
+export GPG_TTY=$(tty)
+
 alias c="clear"
 alias q="exit"
 alias d="exit"
@@ -148,3 +150,4 @@ alias nvim="~/.scripts/nvim"
 alias v="nvim"
 
 alias ff="fastfetch"
+
