@@ -1,111 +1,96 @@
 {
-    "layer": "top",
-    "spacing": 0,
-    "height": 0,
+	"layer": "top",
+	"spacing": 0,
+	"height": 0,
 
-    "margin-top": 0,
-    "margin-right": 0,
-    "margin-bottom": 0,
-    "margin-left": 0,
+	"margin-top": 0,
+	"margin-right": 0,
+	"margin-bottom": 0,
+	"margin-left": 0,
 
-    "modules-left": [
-        "custom/launcher",
-        "hyprland/workspaces"
-    ],
+	"modules-left": ["custom/launcher", "hyprland/workspaces"],
 
-    "modules-center": [
-        "clock"
-    ],
+	"modules-center": ["clock"],
 
-    "modules-right": [
-        "tray",
-		"hyprland/language",
-        "cpu_text",
-        "cpu",
-        "memory",
-        "battery",
-        "network",
-        "pulseaudio",
-		"custom/control"
-    ],
+	"modules-right": ["tray", "hyprland/language", "cpu_text", "cpu", "memory", "battery", "network", "pulseaudio", "custom/control"],
 
-    "custom/launcher":{
-        "format": " ",
-        "on-click": "rofi -show drun",
-        "on-click-right": "killall rofi",
-        "tooltip": false
-    },
+	"custom/launcher": {
+		"format": " ",
+		"on-click": "rofi -show drun",
+		"on-click-right": "killall rofi",
+		"tooltip": false
+	},
 
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "tooltip": false
-    },
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"tooltip": false
+	},
 
-    "tray": {
-        "spacing": 10,
-        "tooltip": false
-    },
+	"tray": {
+		"spacing": 10,
+		"tooltip": false
+	},
 
-    "clock": {
-        "format": "{:%H:%M %a %d.%m.%Y}",
-        "tooltip": false
-    },
+	"clock": {
+		"format": "{:%H:%M %a %d.%m.%Y}",
+		"tooltip": false
+	},
 
-    "cpu": {
-        "format": "cpu {usage}%",
-        "interval": 2,
+	"cpu": {
+		"format": "cpu {usage}%",
+		"interval": 2,
 
-        "states": {
-            "critical": 90
-        }
-    },
+		"states": {
+			"critical": 90
+		}
+	},
 
-    "memory": {
-        "format": "mem {percentage}%",
-        "interval": 2,
+	"memory": {
+		"format": "mem {percentage}%",
+		"interval": 2,
 
-        "states": {
-            "critical": 80
-        }
-    },
+		"states": {
+			"critical": 80
+		}
+	},
 
-    "battery": {
-        "format": "bat {capacity}%",
-        "interval": 5,
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
-        "tooltip": false
-    },
+	"battery": {
+		"format": "bat {capacity}%",
+		"interval": 5,
+		"states": {
+			"warning": 20,
+			"critical": 10
+		},
+		"tooltip": false
+	},
 
-    "network": {
-        "format-wifi" : "wifi {bandwidthDownBits}",
-        "format-ethernet": "enth {bandwidthDownBits}",
-        "format-disconnected" : "no network",
-        "interval": 5,
-        "tooltip": false
-    },
+	"network": {
+		"format-wifi": "wifi {bandwidthDownBits}",
+		"format-ethernet": "enth {bandwidthDownBits}",
+		"format-disconnected": "no network",
+		"interval": 5,
+		"tooltip": false
+	},
 
-    "pulseaudio": {
-        "scroll-step": 5,
-        "max-volume": 150,
-        "format": "vol {volume}%",
-        "format-bluetooth": "vol {volume}%",
-        "nospacing": 1,
-        "on-click": "pwvucontrol",
-        "tooltip": false
-    },
+	"pulseaudio": {
+		"scroll-step": 5,
+		"max-volume": 150,
+		"format": "vol {volume}%",
+		"format-bluetooth": "vol {volume}%",
+		"nospacing": 1,
+		"on-click": "pwvucontrol",
+		"tooltip": false
+	},
 
 	"hyprland/language": {
 		"format": "{short}"
 	},
 
-	"custom/control":{
-        "format": " ",
-        "on-click": "control",
-        "on-click-right": "killall control",
-        "tooltip": false
-    }
+	"custom/control": {
+		"format": " ",
+		"on-click": "control",
+		"on-click-right": "killall control",
+		"tooltip": false
+	}
 }

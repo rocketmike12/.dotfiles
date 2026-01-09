@@ -1,22 +1,22 @@
 * {
-    border: none;
-    min-height: 0;
-    font-family: "JetBrains Nerd Font Mono";
-    font-weight: 500;
-    font-size: 14px;
-    padding: 0;
+	border: none;
+	min-height: 0;
+	font-family: "JetBrains Nerd Font Mono";
+	font-weight: 500;
+	font-size: 14px;
+	padding: 0;
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0.85);
-    border: 2px solid #fcfcce;
-    border-radius: 4px;
+	background: rgba(0, 0, 0, 0.85);
+	border: 2px solid #fcfcce;
+	border-radius: 4px;
 }
 
 tooltip {
-    background-color: #101010;
-    border: 2px solid #fcfcce;
-    font-size: 2px;
+	background-color: #101010;
+	border: 2px solid #fcfcce;
+	font-size: 2px;
 	color: #fcfcce;
 }
 
@@ -32,43 +32,43 @@ tooltip label {
 #network,
 #pulseaudio,
 #language {
-    margin: 6px 6px 6px 0px;
-    padding: 2px 8px;
+	margin: 6px 6px 6px 0px;
+	padding: 2px 8px;
 	border-radius: 4px;
 }
 
 #workspaces {
-    margin: 6px 0px 6px 6px;
-    border-radius: 4px;
+	margin: 6px 0px 6px 6px;
+	border-radius: 4px;
 }
 
 #workspaces button {
-    all: initial;
-    min-width: 0;
-    box-shadow: inset 0 -3px transparent;
-    padding: 2px 4px;
-    color: #fcfcce;
-    background-color: #120F19;
-    border: 2px solid #fcfcce;
-    border-radius: 4px;
-    margin-right: 2px;
+	all: initial;
+	min-width: 0;
+	box-shadow: inset 0 -3px transparent;
+	padding: 2px 4px;
+	color: #fcfcce;
+	background-color: #120f19;
+	border: 2px solid #fcfcce;
+	border-radius: 4px;
+	margin-right: 2px;
 }
 
 #workspaces button.active {
-    color: #000000;
-    background-color: #fcfcce;
+	color: #000000;
+	background-color: #fcfcce;
 }
 
 #workspaces button.urgent {
-    background-color: #cccc7c;
+	background-color: #cccc7c;
 	color: #000000;
 	border: 2px solid #cccc7c;
 }
 
 #clock {
-    background-color: #fcfcce;
-    border: 2px solid #120F19;
-    color: #000000;
+	background-color: #fcfcce;
+	border: 2px solid #120f19;
+	color: #000000;
 }
 
 #cpu,
@@ -78,9 +78,9 @@ tooltip label {
 #battery,
 #tray,
 #language {
-    background-color: rgba(6, 6, 6, 0.85);
-    border: 2px solid #fcfcce;
-    color: #fcfcce;
+	background-color: rgba(6, 6, 6, 0.85);
+	border: 2px solid #fcfcce;
+	color: #fcfcce;
 }
 
 #network {
@@ -96,15 +96,15 @@ tooltip label {
 
 #cpu.critical,
 #memory.critical {
-    color: #cccc7c;
-    border: 2px solid #cccc7c;
+	color: #cccc7c;
+	border: 2px solid #cccc7c;
 }
 
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-    color: #cccc7c;
-    border: 2px solid #cccc7c;
+	color: #cccc7c;
+	border: 2px solid #cccc7c;
 }
 
 #custom-launcher {
