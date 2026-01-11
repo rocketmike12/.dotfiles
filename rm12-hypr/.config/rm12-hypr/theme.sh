@@ -35,8 +35,7 @@ if [[ -f "$HOME/.config/waybar/rm12-hypr.lock" && -d "$BASE/waybar" ]]; then
 	ln -sf "$BASE/waybar/config.jsonc" "$HOME/.config/waybar/config.jsonc"
 	ln -sf "$BASE/waybar/style.css" "$HOME/.config/waybar/style.css"
 
-	killall waybar
-	waybar & > /dev/null
+	killall -SIGUSR2 waybar
 fi
 
 if [[ -f "$HOME/.config/rofi/rm12-hypr.lock" && -d "$BASE/rofi" ]]; then
