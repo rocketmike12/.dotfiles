@@ -147,6 +147,7 @@ alias d="exit"
 alias t="tmux"
 
 alias nvim="~/.scripts/nvim"
+alias vi="nvim"
 alias v="nvim"
 
 alias ff="fastfetch"
