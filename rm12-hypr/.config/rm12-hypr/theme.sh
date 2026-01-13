@@ -41,7 +41,7 @@ fi
 if [[ -f "$HOME/.config/rofi/rm12-hypr.lock" && -d "$BASE/rofi" ]]; then
 	echo "setting rofi"
 
-	ln -sf "$BASE/rofi/config.rasi" "$HOME/.config/rofi/config.rasi"
+	ln -sf "$BASE/rofi/theme.rasi" "$HOME/.config/rofi/theme.rasi"
 fi
 
 if [[ -f "$HOME/.config/alacritty/rm12-hypr.lock" && -d "$BASE/alacritty" ]]; then

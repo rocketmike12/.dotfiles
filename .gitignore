@@ -9,7 +9,7 @@ hypr/.config/hypr/look_and_feel.conf
 
 kitty/.config/kitty/theme.conf
 
-rofi/.config/rofi/config.rasi
+rofi/.config/rofi/theme.rasi
 
 waybar/.config/waybar/config.jsonc
 waybar/.config/waybar/style.css
