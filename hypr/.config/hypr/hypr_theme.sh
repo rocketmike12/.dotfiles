@@ -67,7 +67,4 @@ if test -d "$HOME/.config/hypr/themes/$1/"; then
 
 	# Reload wezterm config
 	touch ~/.wezterm.lua
-
-	# Reload neovim
-	nvr --servername ~/.nvimsocket --remote-send ":source ~/.config/nvim/lua/config/colorscheme.lua<CR>"
 fi

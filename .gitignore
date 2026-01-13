@@ -1,8 +1,15 @@
+rm12-hypr/.config/rm12-hypr/theme
+rm12-hypr/.config/rm12-hypr/wallpaper
+
 alacritty/.config/alacritty/theme.toml
+
 firefox/.mozilla/firefox/mike/chrome/theme.css
+
 hypr/.config/hypr/look_and_feel.conf
+
 kitty/.config/kitty/theme.conf
-rofi/.config/rofi/config.rasi
-scripts/.scripts/kitty_theme_hypr
+
+rofi/.config/rofi/theme.rasi
+
 waybar/.config/waybar/config.jsonc
 waybar/.config/waybar/style.css
