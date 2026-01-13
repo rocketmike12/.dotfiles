@@ -42,13 +42,14 @@ GUM="$(detect_gum)"
 
 "
 
-modules=("scripts" "wallpapers" "bash" "zsh" "alacritty" "kitty" "wezterm" "nvim" "hypr" "waybar" "rofi" "firefox")
+modules=("scripts" "bash" "zsh" "alacritty" "kitty" "wezterm" "nvim" "hypr" "waybar" "rofi" "firefox")
 
 OPTS=$("$GUM" choose \
 	--no-limit \
 	--header.foreground="#b4befe" \
 	--cursor.foreground="#cba6f7" \
 	--selected.foreground="#cba6f7" \
+	--item.foreground="#ffffff" \
 	"${modules[@]}")
 
 [ -z "$OPTS" ] && exit 0
@@ -58,7 +59,11 @@ for module in $OPTS; do
 		--spinner dot \
 		--spinner.foreground="#cba6f7" \
 		--title "installing $("$GUM" style --foreground "#a6e3a1" --bold "$module")" \
-		-- sleep 1
+		-- stow --verbose "$module"
+
+	"$GUM" join $("$GUM" style --foreground "#a6e3a1" --bold "$module") " " $("$GUM" style --foreground "#ffffff" "installed")
 done
+
+echo
 
 "$GUM" style --foreground "#a6e3a1" --bold "installation complete"
