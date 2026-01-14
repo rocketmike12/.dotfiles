@@ -13,3 +13,5 @@ rofi/.config/rofi/theme.rasi
 
 waybar/.config/waybar/config.jsonc
 waybar/.config/waybar/style.css
+
+wezterm/.config/wezterm/theme.lua

@@ -60,6 +60,10 @@
 				background-color: var(--newtab-element-hover-color) !important;
 			}
 		}
+
+		.search-inner-wrapper {
+			display: none !important;
+		}
 	}
 
 	/* links */
