@@ -1,1 +1,0 @@
-/home/mike/.config/wezterm/zen/theme.lua
