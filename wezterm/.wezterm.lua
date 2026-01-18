@@ -86,12 +86,12 @@ wezterm.on(
 
 config.keys = {
 	{
-		key = '\'',
+		key = 'i',
 		mods = 'CTRL',
 		action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
 	},
 	{
-		key = ';',
+		key = 'u',
 		mods = 'CTRL',
 		action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
 	},
