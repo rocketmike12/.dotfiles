@@ -10,7 +10,7 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -89,6 +89,8 @@ if [ -x /usr/bin/dircolors ]; then
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
 fi
+
+__bp_adjust_histcontrol() { :; }
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
