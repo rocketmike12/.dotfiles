@@ -35,7 +35,10 @@ box#vertical-tabs {
 	border-color: var(--tf-border) !important;
 	border-radius: var(--tf-rounding);
 	transition: border-color var(--tf-border-transition) !important;
+
 	color: var(--tf-fg) !important;
+
+	background-color: var(--tf-bg) !important;
 	&:hover,
 	&:focus {
 		border-color: var(--tf-accent) !important;

@@ -213,7 +213,7 @@
 #downloadsHistory .button-icon,
 #PanelUI-fxa-menu-syncnow-button::before,
 .subviewbutton:not(#appMenu-proton-update-banner) > image {
-	fill: currentColor !important;
+	fill: var(--theme-fg-color) !important;
 	fill-opacity: var(--toolbarbutton-icon-fill-opacity) !important;
 	-moz-context-properties: fill, fill-opacity, stroke !important;
 }

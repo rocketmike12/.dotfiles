@@ -62,6 +62,9 @@ toolbarbutton:hover {
 
 #navigator-toolbox {
 	border-bottom: var(--border-width) !important;
+
+	color: var(--tf-fg) !important;
+	background-color: var(--tf-bg) !important;
 }
 
 #nav-bar {
@@ -73,7 +76,9 @@ toolbarbutton:hover {
 	border-color: var(--tf-border) !important;
 	border-radius: var(--tf-rounding);
 	transition: border-color var(--tf-border-transition) !important;
+
 	color: var(--tf-fg) !important;
+
 	&:hover,
 	&:focus {
 		border-color: var(--tf-accent) !important;
@@ -104,6 +109,8 @@ toolbarbutton:hover {
 	border-color: var(--tf-border) !important;
 	border-radius: var(--tf-rounding);
 	transition: border-color var(--tf-border-transition) !important;
+
+	color: var(--tf-fg) !important;
 
 	&:hover,
 	&:focus {
