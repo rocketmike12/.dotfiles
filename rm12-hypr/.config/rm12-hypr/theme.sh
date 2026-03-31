@@ -26,7 +26,7 @@ if [[ -f "$HOME/.config/hypr/rm12-hypr.lock" && -d "$BASE/hypr" ]]; then
 	ln -sf "$WALLPAPER" "$HOME/.config/rm12-hypr/wallpaper"
 
 	hyprctl reload > /dev/null
-	swww img ~/.config/rm12-hypr/wallpaper --transition-type wipe --transition-fps 120 --transition-duration 1
+	awww img ~/.config/rm12-hypr/wallpaper --transition-type wipe --transition-fps 120 --transition-duration 1
 fi
 
 if [[ -f "$HOME/.config/waybar/rm12-hypr.lock" && -d "$BASE/waybar" ]]; then
