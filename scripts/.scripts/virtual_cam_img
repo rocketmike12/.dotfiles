@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -e
+
+DEVICE="/dev/video10"
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <image/gif/video>"
+    exit 1
+fi
+
+INPUT="$1"
+
+# Load v4l2loopback if device doesn't exist
+if [ ! -e "$DEVICE" ]; then
+    echo "[*] Creating virtual camera at $DEVICE..."
+    sudo modprobe -r v4l2loopback 2>/dev/null || true
+    sudo modprobe v4l2loopback devices=1 video_nr=10 card_label="VirtualCam" exclusive_caps=1
+fi
+
+# Verify device
+if [ ! -e "$DEVICE" ]; then
+    echo "[!] Failed to create virtual camera device."
+    exit 1
+fi
+
+echo "[*] Using input: $INPUT"
+echo "[*] Streaming to $DEVICE"
+
+# Detect file type
+EXT="${INPUT##*.}"
+EXT=$(echo "$EXT" | tr '[:upper:]' '[:lower:]')
+
+if [[ "$EXT" == "jpg" || "$EXT" == "jpeg" || "$EXT" == "png" || "$EXT" == "webp" ]]; then
+    LOOP_OPTS="-loop 1"
+else
+    LOOP_OPTS="-stream_loop -1"
+fi
+
+# Crop (center crop to 1280x720)
+FILTER="scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720"
+
+# Run ffmpeg
+ffmpeg -re $LOOP_OPTS -i "$INPUT" \
+    -vf "$FILTER,format=yuv420p,fps=30" \
+    -f v4l2 "$DEVICE"
