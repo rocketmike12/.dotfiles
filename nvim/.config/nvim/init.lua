@@ -19,18 +19,21 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 require("config.keymaps")
+require("config.autocmd")
+
 require("config.lazy")
 
 require("config.aliases")
 
 -- require('config.null_ls')
-require("config.prettier")
+-- require("config.prettier")
+require("config.conform")
 
 require("config.colorscheme")
 
 require("lualine").setup({
 	options = {
-		theme = "catppuccin",
+		theme = "auto",
 	},
 })
 
