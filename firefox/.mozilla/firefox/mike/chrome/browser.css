@@ -1,3 +1,7 @@
+#customizableui-special-spring6, #customizableui-special-spring7 {
+	display: none !important;
+}
+
 .browserContainer,
 .browser-toolbox-background {
 	background: var(--tf-bg) !important;

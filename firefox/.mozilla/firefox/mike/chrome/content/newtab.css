@@ -19,14 +19,38 @@
 		height: auto;
 	}
 
+	.content {
+		height: 126px !important;
+	}
+
+	.logo-in-content {
+		width: 100% !important;
+
+		margin: 0 !important;
+		padding: 0 !important;
+
+		display: flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+	}
+
 	/* replace firefox logo */
 	.logo-and-wordmark {
+		margin: 0 !important;
+		padding: 0 !important;
+
 		.logo {
 			display: none !important;
 		}
+
 		.wordmark {
+			display: block !important;
+
 			background: unset !important;
 			width: unset !important;
+			height: fit-content !important;
+			margin: 0 !important;
+
 			&::before {
 				content: var(--tf-newtab-logo);
 				white-space: pre;
@@ -38,7 +62,7 @@
 		}
 	}
 
-	.outer-wrapper {
+	.nova-outer-wrapper {
 		padding: 0 !important;
 
 		display: flex !important;
@@ -56,6 +80,7 @@
 			border: var(--border-width) solid var(--newtab-border-color) !important;
 			border-radius: var(--tf-rounding) !important;
 			box-shadow: none !important;
+
 			&:hover {
 				background-color: var(--newtab-element-hover-color) !important;
 			}
@@ -72,10 +97,12 @@
 			box-shadow: none !important;
 			border-radius: var(--tf-rounding) !important;
 			border: var(--border-width) solid var(--newtab-border-color) !important;
+
 			&:hover {
 				background-color: var(--newtab-element-hover-color) !important;
 			}
 		}
+
 		.top-site-icon {
 			background-color: transparent !important;
 		}
@@ -91,12 +118,15 @@
 	.card-outer {
 		border-radius: var(--tf-rounding) !important;
 		border: var(--border-width) solid var(--newtab-border-color);
+
 		.card {
 			border-radius: var(--tf-rounding) !important;
 		}
+
 		.card-preview-image-outer {
 			border-radius: var(--tf-rounding) var(--tf-rounding) 0 0 !important;
 		}
+
 		.card-context {
 			display: none !important;
 		}

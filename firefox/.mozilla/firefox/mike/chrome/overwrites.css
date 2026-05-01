@@ -32,6 +32,8 @@
 	--toolbarbutton-hover-background: var(--tab-hover-background-color) !important;
 	--button-background-color-active: var(--tab-hover-background-color) !important;
 
+	--button-background-color: var(--tf-bg) !important;
+
 	/* containers */
 	[data-color="yellow"],
 	.identity-color-yellow {

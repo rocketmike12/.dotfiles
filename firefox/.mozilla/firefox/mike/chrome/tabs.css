@@ -4,10 +4,12 @@ box#vertical-tabs {
 	border-radius: var(--tf-rounding);
 	padding: 8px 0px !important;
 	transition: border-color var(--tf-border-transition);
+
 	&:hover,
 	&:focus {
 		border-color: var(--tf-accent) !important;
 	}
+
 	&::before {
 		display: var(--tf-display-titles);
 		content: "tabs";
@@ -16,6 +18,7 @@ box#vertical-tabs {
 		margin: -1.75rem 0.75rem;
 		padding: 0 2px;
 	}
+
 	&:hover::before {
 		color: var(--tf-accent);
 	}
@@ -39,13 +42,16 @@ box#vertical-tabs {
 	color: var(--tf-fg) !important;
 
 	background-color: var(--tf-bg) !important;
+
 	&:hover,
 	&:focus {
 		border-color: var(--tf-accent) !important;
+
 		&::before {
 			color: var(--tf-accent);
 		}
 	}
+
 	&::before {
 		display: var(--tf-display-titles);
 		content: "tabs";
@@ -55,7 +61,7 @@ box#vertical-tabs {
 		padding: 0 2px;
 	}
 
-	#firefox-view-button[open] > .toolbarbutton-icon,
+	#firefox-view-button[open]>.toolbarbutton-icon,
 	.tab-background:is([selected], [multiselected]) {
 		box-shadow: none !important;
 		/* background-color: var(--tab-selected-bgcolor) !important; */
@@ -67,7 +73,7 @@ box#vertical-tabs {
 		color: var(--tf-accent) !important;
 	}
 
-	.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected], [multiselected]) {
+	.tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected], [multiselected]) {
 		/* background-color: var(--tab-hover-background-color) !important; */
 		background-color: #000000 !important;
 	}
@@ -83,10 +89,21 @@ box#vertical-tabs {
 	}
 }
 
-:root:not([privatebrowsingmode], [firefoxviewhidden]) :is(toolbarbutton, toolbarpaletteitem) + #tabbrowser-tabs,
-:root[privatebrowsingmode]:not([firefoxviewhidden]) :is(toolbarbutton:not(#firefox-view-button), toolbarpaletteitem:not(#wrapper-firefox-view-button)) + #tabbrowser-tabs {
+:root:not([privatebrowsingmode], [firefoxviewhidden]) :is(toolbarbutton, toolbarpaletteitem)+#tabbrowser-tabs,
+:root[privatebrowsingmode]:not([firefoxviewhidden]) :is(toolbarbutton:not(#firefox-view-button), toolbarpaletteitem:not(#wrapper-firefox-view-button))+#tabbrowser-tabs {
 	border-inline-start: none !important;
 	padding-inline-start: 0 !important;
+}
+
+
+#tabbrowser-tabs {
+	border: unset !important;
+	outline: unset !important;
+	box-shadow: unset !important;
+}
+
+#tabbrowser-tabs::before {
+	content: none !important;
 }
 
 .toolbar-items {

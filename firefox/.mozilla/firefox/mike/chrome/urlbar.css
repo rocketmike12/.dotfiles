@@ -1,9 +1,6 @@
-#urlbar-container {
-	background-color: var(--tf-bg) !important;
-}
-
 #urlbar {
 	text-align: left !important;
+	background-color: transparent !important;
 
 	& input {
 		background-color: var(--tf-bg) !important;
@@ -22,18 +19,40 @@
 	}
 }
 
-#urlbar-scheme {
-	background-color: #00ff00 !important;
+#sidebar-button {
+	padding-left: 0 !important
 }
 
-#urlbar-background {
+#PanelUI-menu-button {
+	padding-right: 0 !important;
+}
+
+/* #urlbar-scheme { */
+/* 	background-color: #00ff00 !important; */
+/* } */
+
+.urlbar-background {
 	background-color: transparent !important;
 	border: unset !important;
 	box-shadow: unset !important;
+	outline: unset !important;
 }
 
-#urlbar-searchmode-switcher {
-	background-color: var(--tf-bg) !important;
+.urlbar-input-container {
+	background-color: transparent !important;
+	border: unset !important;
+	box-shadow: unset !important;
+	outline: unset !important;
+}
+
+.searchmode-switcher {
+	background-color: transparent !important;
+	color: var(--tf-fg) !important;
+	fill: var(--tf-fg) !important;
+}
+
+.button-background {
+	background-color: transparent !important;
 	color: var(--tf-fg) !important;
 	fill: var(--tf-fg) !important;
 }
@@ -79,6 +98,6 @@
 	border-top: unset !important;
 }
 
-.urlbarView:not([noresults]) > .search-one-offs:not([hidden]) {
+.urlbarView:not([noresults])>.search-one-offs:not([hidden]) {
 	border-top: var(--border-width) solid var(--tf-accent) !important;
 }

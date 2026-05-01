@@ -159,9 +159,11 @@ toolbarbutton:hover {
 #PlacesChevron {
 	list-style-image: none !important;
 	font-size: var(--tf-font-size);
-	width: auto !important;
 	margin: 2px !important;
 	background-color: none !important;
+
+	width: 34px !important;
+	height: 34px !important;
 
 	&:hover {
 		background-color: none !important;
@@ -177,8 +179,8 @@ toolbarbutton:hover {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	width: 34px;
-	height: 100%;
+	width: 34px !important;
+	height: 34px !important;
 	margin: 0 4px !important;
 	color: var(--tf-fg) !important;
 }
