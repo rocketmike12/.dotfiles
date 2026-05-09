@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	if vim.v.shell_error ~= 0 then
 		vim.api.nvim_echo({
 			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out,                            "WarningMsg" },
+			{ out, "WarningMsg" },
 			{ "\nPress any key to exit..." },
 		}, true, {})
 		vim.fn.getchar()
@@ -48,6 +48,14 @@ require("lazy").setup({
 
 	-- lsp stuff
 	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		config = function()
+			require("config.lsp")
+		end,
+	},
+
+	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate",
 		lazy = false,
@@ -59,6 +67,7 @@ require("lazy").setup({
 		dependencies = { "mason.nvim" },
 		lazy = false,
 		config = function()
+			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
@@ -67,20 +76,12 @@ require("lazy").setup({
 					"jsonls",
 					"ts_ls",
 					"clangd",
-					"emmet_language_server",
 				},
 			})
 		end,
 	},
 
-	{
-		"neovim/nvim-lspconfig",
-		lazy = false,
-		config = function()
-			require("config.lsp")
-		end,
-	},
-
+	-- { 'jose-elias-alvarez/null-ls.nvim' },
 	{
 		"nvimtools/none-ls.nvim",
 		config = function()
@@ -113,11 +114,8 @@ require("lazy").setup({
 		end,
 	},
 
-	-- Conform
-	{
-		'stevearc/conform.nvim',
-		opts = {},
-	},
+	-- Prettier
+	{ "MunifTanjim/prettier.nvim" },
 
 	-- Treesitter
 	{
@@ -151,7 +149,7 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
-	{ "tmsvg/pear-tree",             config = function() end },
+	{ "tmsvg/pear-tree", config = function() end },
 
 	{
 		"windwp/nvim-autopairs",
@@ -163,7 +161,7 @@ require("lazy").setup({
 
 	-- nvim-tree
 	{ "nvim-tree/nvim-web-devicons", opts = {} },
-	{ "nvim-tree/nvim-tree.lua",     opts = {} },
+	{ "nvim-tree/nvim-tree.lua", opts = {} },
 
 	-- Emmet
 	{
@@ -193,6 +191,14 @@ require("lazy").setup({
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
+	-- live-server
+	{
+		"barrett-ruth/live-server.nvim",
+		build = "pnpm add -g live-server",
+		cmd = { "LiveServerStart", "LiveServerStop" },
+		config = true,
+	},
+
 	-- yuck language support
 	{
 		"elkowar/yuck.vim",
@@ -200,10 +206,10 @@ require("lazy").setup({
 	},
 
 	-- nvim-colorizer
-	{ "catgoose/nvim-colorizer.lua", opts = {} },
+	{ "norcalli/nvim-colorizer.lua", opts = {} },
 
 	-- neocord
-	{ "IogaMaster/neocord",          event = "VeryLazy", opts = {} },
+	{ "IogaMaster/neocord", event = "VeryLazy", opts = {} },
 
 	-- { 'edluffy/hologram.nvim', opts={} },
 
@@ -221,13 +227,13 @@ require("lazy").setup({
 	},
 
 	-- THEMES
-	{ "Mofiqul/dracula.nvim",        opts = {} },
+	{ "Mofiqul/dracula.nvim", opts = {} },
 
 	{ "wilmanbarrios/palenight.nvim" },
 
-	{ "rebelot/kanagawa.nvim",       opts = {} },
+	{ "rebelot/kanagawa.nvim", opts = {} },
 
-	{ "maxmx03/fluoromachine.nvim",  opts = {} },
+	{ "maxmx03/fluoromachine.nvim", opts = {} },
 
 	{
 		"catppuccin/nvim",
@@ -236,7 +242,6 @@ require("lazy").setup({
 
 		integrations = {
 			cmp = true,
-			lualine = true
 		},
 
 		opts = {
@@ -262,11 +267,11 @@ require("lazy").setup({
 		end,
 	},
 
-	{ "rose-pine/neovim",                 name = "rose-pine",     opts = {} },
+	{ "rose-pine/neovim", name = "rose-pine", opts = {} },
 
-	{ "loctvl842/monokai-pro.nvim",       opts = {} },
+	{ "loctvl842/monokai-pro.nvim", opts = {} },
 
-	{ "ellisonleao/gruvbox.nvim",         opts = {} },
+	{ "ellisonleao/gruvbox.nvim", opts = {} },
 
 	{
 		"xero/evangelion.nvim",
