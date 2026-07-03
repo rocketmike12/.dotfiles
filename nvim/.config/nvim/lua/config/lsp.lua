@@ -4,7 +4,7 @@ local function setup_server(name, opts)
 	vim.lsp.config[name] = vim.tbl_deep_extend("force", {
 		capabilities = capabilities,
 	}, opts or {})
-	vim.lsp.start(vim.lsp.config[name])
+	vim.lsp.enable(name)
 end
 
 -- Lua
