@@ -1,1 +1,1 @@
-# Created by newuser for 5.9
+source /usr/share/zsh/site-contrib/zsh-vi-mode/zsh-vi-mode.plugin.zsh
