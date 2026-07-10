@@ -3,7 +3,7 @@ configuration {
 	display-window: "Windows:\n";
 	display-run: "run:\n";
 	drun-display-format: "{icon} {name}";
-	font: "JetBrainsMono Nerd Font Medium 16";
+	font: "Hack Nerd Font Mono Medium 16";
 	modi: "window,run,drun";
 	show-icons: true;
 	icon-theme: "ePapirus-Dark";
