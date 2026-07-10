@@ -1,0 +1,1 @@
+/home/mike/.config/rm12-hypr/themes/zen/wezterm/theme.lua
