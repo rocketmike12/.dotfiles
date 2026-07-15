@@ -145,6 +145,9 @@ PATH="$PATH:$SCRIPTS"
 
 export GPG_TTY=$(tty)
 
+alias reboot="loginctl reboot"
+alias shutdown="loginctl poweroff"
+
 alias c="clear"
 alias q="exit"
 alias d="exit"
@@ -155,4 +158,3 @@ alias v="nvim"
 export EDITOR="$HOME/.scripts/nvim"
 
 alias ff="fastfetch"
-
