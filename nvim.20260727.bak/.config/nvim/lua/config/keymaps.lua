@@ -19,10 +19,10 @@ vim.g.clipboard = {
 vim.keymap.set({ "n", "c", "t" }, "<C-B>", ":NvimTreeToggle<CR>")
 vim.keymap.set({ "n" }, "<C-D>", "yyp")
 
--- vim.keymap.set({ "n", "c" }, "<C-T>", ":tabnew<CR>")
--- vim.keymap.set({ "n", "c" }, "<C-PageUp>", ":tabnext<CR>")
--- vim.keymap.set({ "n", "c" }, "<C-PageDown>", ":tabprevious<CR>")
--- vim.keymap.set({ "n", "c" }, "<C-W>", ":tabclose,<CR>")
+vim.keymap.set({ "n", "c" }, "<C-T>", ":tabnew<CR>")
+vim.keymap.set({ "n", "c" }, "<C-PageUp>", ":tabnext<CR>")
+vim.keymap.set({ "n", "c" }, "<C-PageDown>", ":tabprevious<CR>")
+vim.keymap.set({ "n", "c" }, "<C-W>", ":tabclose,<CR>")
 
 vim.keymap.set({ "i", "n" }, "<C-Enter>", "<C-o>o")
 

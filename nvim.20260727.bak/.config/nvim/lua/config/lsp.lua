@@ -1,4 +1,4 @@
-local capabilities = require("blink.cmp").get_lsp_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local function setup_server(name, opts)
 	vim.lsp.config[name] = vim.tbl_deep_extend("force", {
@@ -27,14 +27,12 @@ setup_server("lua_ls", {
 				},
 				checkThirdParty = false,
 			},
-			telemetry = {
-				enable = false,
-			},
+			telemetry = { enable = false },
 		},
 	},
 })
 
--- TypeScript / JavaScript
+-- TS/JS
 setup_server("ts_ls", {
 	cmd = { "typescript-language-server", "--stdio" },
 })
@@ -57,17 +55,10 @@ setup_server("jsonls", {
 -- Emmet
 setup_server("emmet_language_server", {
 	cmd = { "emmet-language-server", "--stdio" },
-	filetypes = {
-		"html",
-		"css",
-		"scss",
-		"javascript",
-		"javascriptreact",
-		"typescriptreact",
-	},
+	filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescriptreact" },
 })
 
--- C / C++
+-- C++
 setup_server("clangd", {
 	cmd = { "clangd" },
 	filetypes = { "c", "cpp" },
