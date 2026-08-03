@@ -11,21 +11,21 @@ vim.cmd([[
 ]])
 
 vim.o.updatetime = 250
-vim.api.nvim_create_autocmd("CursorHold", {
+vim.api.nvim_create_autocmd('CursorHold', {
 	callback = function()
 		vim.diagnostic.open_float(nil, {
 			focusable = false,
-			border = "rounded",
-			source = "always",
-			header = "",
+			border = 'rounded',
+			source = 'always',
+			header = '',
 		})
 	end,
 })
 
-vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticError" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticWarn" })
-vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticInfo" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "H", texthl = "DiagnosticHint" })
+vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticError' })
+vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticWarn' })
+vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticInfo' })
+vim.fn.sign_define('DiagnosticSignHint', { text = 'H', texthl = 'DiagnosticHint' })
 
 vim.cmd([[
 	hi DiagnosticError guifg=#ff4d6d guibg=NONE

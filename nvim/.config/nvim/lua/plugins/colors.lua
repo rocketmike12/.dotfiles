@@ -1,7 +1,7 @@
 return {
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
+		'catppuccin/nvim',
+		name = 'catppuccin',
 		priority = 1,
 
 		integrations = {
@@ -11,9 +11,9 @@ return {
 		opts = {
 			color_overrides = {
 				all = {
-					crust = "#0a000c",
-					mantle = "#0a000c",
-					base = "#0a000c",
+					crust = '#0a000c',
+					mantle = '#0a000c',
+					base = '#0a000c',
 				},
 			},
 			transparent_background = true,

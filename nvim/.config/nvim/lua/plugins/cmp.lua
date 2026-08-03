@@ -1,36 +1,36 @@
 return {
 	{
 		'windwp/nvim-autopairs',
-		event = "InsertEnter",
+		event = 'InsertEnter',
 		config = true,
 		opts = {}
 	},
 
 	{
-		"saghen/blink.cmp",
+		'saghen/blink.cmp',
 
-		version = "1.*",
+		version = '1.*',
 
 		dependencies = {
-			"L3MON4D3/LuaSnip",
-			version = "v2.*",
+			'L3MON4D3/LuaSnip',
+			version = 'v2.*',
 		},
 
 		opts = {
 			snippets = {
-				preset = "luasnip",
+				preset = 'luasnip',
 			},
 
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
+				default = { 'lsp', 'path', 'snippets', 'buffer' },
 			},
 
 			keymap = {
-				preset = "none",
+				preset = 'none',
 
-				["<Tab>"] = {
+				['<Tab>'] = {
 					function(cmp)
-						local ls = require("luasnip")
+						local ls = require('luasnip')
 
 						if cmp.is_visible() then
 							return cmp.select_next()
@@ -39,12 +39,12 @@ return {
 							return true
 						end
 					end,
-					"fallback",
+					'fallback',
 				},
 
-				["<S-Tab>"] = {
+				['<S-Tab>'] = {
 					function(cmp)
-						local ls = require("luasnip")
+						local ls = require('luasnip')
 
 						if cmp.is_visible() then
 							return cmp.select_prev()
@@ -53,24 +53,24 @@ return {
 							return true
 						end
 					end,
-					"fallback",
+					'fallback',
 				},
 
-				["<CR>"] = { "accept", "fallback" },
+				['<CR>'] = { 'accept', 'fallback' },
 			},
 
 			appearance = {
-				nerd_font_variant = "mono",
+				nerd_font_variant = 'mono',
 			},
 
 			completion = {
 				menu = {
-					border = "rounded",
+					border = 'rounded',
 
 					draw = {
 						columns = {
-							{ "kind_icon" },
-							{ "label", "label_description", gap = 1 },
+							{ 'kind_icon' },
+							{ 'label', 'label_description', gap = 1 },
 						},
 					},
 				},
@@ -78,16 +78,16 @@ return {
 				documentation = {
 					auto_show = false,
 					window = {
-						border = "rounded",
+						border = 'rounded',
 					},
 				},
 			},
 
 			fuzzy = {
-				implementation = "prefer_rust_with_warning",
+				implementation = 'prefer_rust_with_warning',
 			},
 		},
 
-		opts_extend = { "sources.default" },
+		opts_extend = { 'sources.default' },
 	}
 }
