@@ -78,6 +78,8 @@ unset color_prompt force_color_prompt
 	#     ;;
 	# esac
 
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+
 source ~/.scripts/tty_colors.sh
 
 # enable color support of ls and also add handy aliases
