@@ -19,8 +19,9 @@
 		height: auto;
 	}
 
-	.content {
+	.content-main {
 		height: 126px !important;
+		display: block !important;
 	}
 
 	.logo-in-content {
