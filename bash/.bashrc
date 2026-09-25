@@ -139,8 +139,10 @@ export matrix03="Knock, knock, Neo."
 
 # alias dotfiles='/usr/bin/git' --git-dir=/home/mike/.dotfiles/ --work-tree=/home/mike
 
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
 NPM_PACKAGES="${HOME}/.npm-packages"
-PATH="$NPM_PACKAGES/bin:$PATH:~/.local/bin:~/.cargo/bin/"
+PATH="$NPM_PACKAGES/bin:$PATH:$HOME/.local/bin:$HOME/.cargo/bin/"
 
 SCRIPTS="${HOME}/.scripts"
 PATH="$PATH:$SCRIPTS"
