@@ -3,7 +3,6 @@
 	background-color: transparent !important;
 
 	& input {
-		background-color: var(--tf-bg) !important;
 		color: var(--tf-fg) !important;
 		caret-color: var(--tf-fg) !important;
 		opacity: 1;
@@ -19,6 +18,25 @@
 	}
 }
 
+.urlbar {
+	--urlbar-background-border: var(--tf-border);
+	--urlbar-background-border: var(--border-width) solid var(--tf-border) !important;
+	--urlbar-background-border-open: var(--urlbar-background-border) !important;
+	--urlbar-background-border-focused: var(--urlbar-background-border) !important;
+	--urlbar-background-border-radius: 0 !important;
+	--urlbar-background-border-top-radius-open: 0 !important;
+	--urlbar-background-box-shadow-open: unset !important;
+	--urlbar-background-outline-focused: none !important;
+	--urlbar-input-container-border: var(--urlbar-background-border) !important;
+	--urlbar-input-container-outline-open: unset !important;
+	--urlbar-input-container-outline-open-focused: unset !important;
+	--urlbar-input-container-outline-offset-open: unset !important;
+	--urlbar-input-growth-open-inline: 0px !important;
+	--urlbar-input-growth-open-block: 0px !important;
+	--urlbar-box-background-color-focus: var(--urlbar-background-color) !important;
+	--urlbar-backgound-color-focus: var(--urlbar-background-color) !important;
+}
+
 #sidebar-button {
 	padding-left: 0 !important
 }
@@ -31,6 +49,10 @@
 /* 	background-color: #00ff00 !important; */
 /* } */
 
+.urlbar-container {
+	background-color: var(--tf-bg) !important;
+}
+
 .urlbar-background {
 	background-color: transparent !important;
 	border: unset !important;
@@ -38,11 +60,63 @@
 	outline: unset !important;
 }
 
+.urlbarView {
+	text-align: start;
+	margin-top: 10px; /* visually starts where navbar ends */
+	background-color: var(--tf-bg) !important;
+	border: var(--border-width) solid var(--tf-accent) !important;
+	border-top: none !important;
+	border-radius: 0 0 var(--tf-rounding) var(--tf-rounding);
+}
+
+.urlbarView-background {
+	background-color: transparent !important;
+	border: unset !important;
+	box-shadow: unset !important;
+	outline: unset !important;
+}
+
+.urlbarView-results {
+	padding: 0 var(--border-width);
+}
+
+.urlbarView-row {
+	border-radius: 0 !important;
+	background-color: var(--tf-bg) !important;
+
+	&:hover, &:focus, &[selected] {
+		background-color: var(--tf-bg) !important;
+
+		.urlbarView-row-inner {
+			background-color: var(--tf-bg) !important;
+			color: var(--tf-fg) !important;
+
+			box-shadow: inset var(--border-width) 0 0 var(--tf-accent) !important;
+		}
+	}
+}
+
+
+.urlbar-input {
+	background-color: transparent !important;
+	border: unset !important;
+	box-shadow: unset !important;
+	outline: unset !important;
+
+	&:focus {
+		background-color: transparent !important;
+	}
+}
+
 .urlbar-input-container {
 	background-color: transparent !important;
 	border: unset !important;
 	box-shadow: unset !important;
 	outline: unset !important;
+
+	&:focus {
+		background-color: transparent !important;
+	}
 }
 
 .searchmode-switcher {
@@ -71,18 +145,7 @@
 	background-color: transparent !important;
 }
 
-.urlbarView {
-	text-align: start;
-	margin-top: 4px;
-	background-color: var(--tf-bg);
-	border: var(--border-width) solid var(--tf-accent) !important;
-	border-top: none !important;
-	border-radius: 0 0 var(--tf-rounding) var(--tf-rounding);
-}
 
-.urlbarView-row-inner {
-	color: var(--tf-fg) !important;
-}
 
 #urlbar hbox:first-child {
 	background-color: var(--tf-bg) !important;

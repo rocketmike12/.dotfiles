@@ -60,3 +60,7 @@ menuitem:hover {
 #appMenu-fxa-separator {
 	display: none !important;
 }
+
+moz-button, moz-button button {
+	background-color: var(--tf-bg) !important;
+}
